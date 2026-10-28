@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.desc }}">
+<meta name="theme-color" content="#0B2437">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.desc }}">
+<meta property="og:image" content="{{ root }}/assets/img/cover-kiln.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="{{ root }}/assets/brand/logo-mark.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="zh-CN" href="{{ root }}/index.html">
+<link rel="alternate" hreflang="en" href="{{ root }}/en/index.html">
+<link rel="preload" as="font" type="font/woff2" href="{{ root }}/assets/fonts/{{ 'harmonyos-sans-sc-400-normal.woff2' if lang == 'zh' else 'barlow-latin-400-normal.woff2' }}" crossorigin>
+<link rel="stylesheet" href="{{ root }}/assets/css/site.css">
+</head>
+<body class="lang-{{ lang }}">
+<a class="skip" href="#main">{{ '跳到主要内容' if lang == 'zh' else 'Skip to content' }}</a>
+
+{# P = 主语言文案；S = 副语言；V/U = 数值与单位 #}
+{% macro P(cn, en) -%}{{ en if lang == 'en' and en else cn }}{%- endmacro %}
+{% macro S(cn, en) -%}{{ en if lang == 'en' else cn }}{%- endmacro %}
+{% macro V(o) -%}{{ o.v_en if lang == 'en' and o.v_en else o.v }}{%- endmacro %}
+{% macro U(o) -%}{{ o.u_en if lang == 'en' and o.u_en else o.u }}{%- endmacro %}
+{% macro img(name, cls, alt) -%}
+<img class="{{ cls }}" src="{{ root }}/assets/img/{{ name }}" alt="{{ alt }}" width="{{ dims[name][0] }}" height="{{ dims[name][1] }}" loading="lazy" decoding="async">
+{%- endmacro %}
+
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="{{ root }}/{{ 'en/' if lang == 'en' else '' }}index.html">
+      <img class="mark" src="{{ root }}/assets/brand/logo-mark-reverse.svg" alt="XG" width="28" height="28">
+      <span class="logo-t">{% if lang == 'en' %}XINGE<i>MACHINERY</i>{% else %}新歌环保<i>XINGE MACHINERY</i>{% endif %}</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="{{ '主导航' if lang == 'zh' else 'Main' }}">
+      <a href="#products"><em>01</em>{{ P('产品', 'Products') }}</a>
+      <a href="#process"><em>02</em>{{ P('工艺', 'Process') }}</a>
+      <a href="#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
+      <a href="#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
+      <a href="#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
+      <a href="#contact"><em>06</em>{{ P('联系', 'Contact') }}</a>
+    </nav>
+    <div class="hd-r">
+      <a class="lang" href="{{ '../index.html' if lang == 'en' else 'en/index.html' }}" hreflang="{{ 'zh-CN' if lang == 'en' else 'en' }}">{{ '中文' if lang == 'en' else 'EN' }}</a>
+      <a class="btn btn-sm" href="#contact">{{ P('获取方案', 'Get a proposal') }}</a>
+      <button class="burger" id="burger" type="button" aria-label="{{ '菜单' if lang == 'zh' else 'Menu' }}" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{# ── 00 封面 ──────────────────────────────────────────── #}
+<section class="hero">
+  <img class="hero-bg" src="{{ root }}/assets/img/{{ c.cover.hero_image or c.cover.image }}" alt="" width="{{ dims[c.cover.hero_image or c.cover.image][0] }}" height="{{ dims[c.cover.hero_image or c.cover.image][1] }}" fetchpriority="high" decoding="async">
+  <div class="hero-veil"></div>
+  <div class="hexlattice" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="kicker">{{ c.cover.eyebrow }}</p>
+    <h1>
+      {% if lang == 'en' %}
+      <span class="h1-en">{{ c.cover.title_en }}</span>
+      <span class="h1-sub">{{ c.cover.title }}</span>
+      {% else %}
+      <span class="h1-cn">{{ c.cover.title }}</span>
+      <span class="h1-sub">{{ c.cover.title_en }}</span>
+      {% endif %}
+    </h1>
+    <p class="hero-sub">{{ P(c.cover.sub, c.cover.sub_en) }}</p>
+    <p class="hero-line">{{ P(c.cover.line, c.cover.line_en) }}</p>
+    <div class="hero-cta">
+      <a class="btn" href="#products">{{ P('看产品线', 'Explore the lines') }}</a>
+      <a class="btn ghost" href="#contact">{{ P('联系业务', 'Talk to us') }}</a>
+    </div>
+  </div>
+  <div class="wrap hero-stats">
+    {% for s in c.cover.stats %}
+    <div class="stat">
+      <b>{{ s.num }}<i>{{ s.unit_en if lang == 'en' and s.unit_en is defined else s.unit }}</i></b>
+      <span>{{ S(s.cn, s.en) }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ── 01 产品线 ────────────────────────────────────────── #}
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="kicker"><em>01</em>{{ P(c.lines.kicker, c.lines.kicker_en) }}</p>
+      <h2>{{ P(c.lines.kicker, c.lines.kicker_en) }}</h2>
+      <p class="lead">{{ P(c.lines.lead, c.lines.lead_en) }}</p>
+    </div>
+    <div class="cards">
+      {% for it in c.lines['items'] %}
+      <article class="card reveal">
+        <div class="card-img">{{ img(it.img, '', S(it.cn, it.en)) }}<span class="chip">{{ it.cap }}</span></div>
+        <div class="card-body">
+          <span class="card-num">{{ it.num }}</span>
+          <h3>{{ P(it.cn, it.en) }}</h3>
+          <p>{{ P(it.cn2, it.cn2_en) }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="combos">
+      <p class="mini-h">{{ P(c.lines.combos_head, c.lines.combos_head_en) }}</p>
+      <div class="combo-grid">
+        {% for cb in c.lines.combos %}
+        <div class="combo">
+          <b>{{ P(cb.t, cb.t_en) }}</b>
+          <span>{{ P(cb.d, cb.d_en) }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── 02 工艺 ──────────────────────────────────────────── #}
+<section class="sec sec-alt" id="process">
+  <div class="wrap grid-2">
+    <div>
+      <p class="kicker"><em>02</em>{{ P(c.process.kicker, c.process.kicker_en) }}</p>
+      <h2>{{ P(c.process.kicker, c.process.kicker_en) }}</h2>
+      <p class="lead">{{ P(c.process.lead, c.process.lead_en) }}</p>
+      <ol class="steps">
+        {% for s in c.process.steps %}
+        <li><span class="n">{{ s.num }}</span><span class="t">{{ P(s.cn, s.en) }}</span><span class="d">{{ P(s.cn2, s.cn2_en) }}</span></li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="proc-side">
+      <figure class="fig">{{ img(c.process.image, '', P(c.process.kicker, c.process.kicker_en)) }}</figure>
+      <div class="safety">
+        <p class="mini-h">{{ P(c.process.safety_head, c.process.safety_head_en) }}</p>
+        {% for k in c.process.safety %}
+        <div class="row"><b>{{ P(k.k, k.k_en) }}</b><span>{{ P(k.v, k.v_en) }}</span></div>
+        {% endfor %}
+      </div>
+      <p class="fine">{{ P(c.process.disclaimer, c.process.disclaimer_en) }}</p>
+    </div>
+  </div>
+</section>
+
+{# ── 03 产出与投入 ───────────────────────────────────── #}
+<section class="sec" id="output">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="kicker"><em>03</em>{{ P(c.outputs.kicker, c.outputs.kicker_en) }}</p>
+      <h2>{{ P(c.outputs.lead, c.outputs.lead_en) }}</h2>
+    </div>
+    <div class="yield-grid">
+      {% for i in range(c.outputs.yields|length) %}
+      <div class="y">
+        <b>{{ (c.outputs.yields[i][1] if lang == 'zh' else c.outputs.yields_en[i][1]) }}</b>
+        <span class="yn">{{ (c.outputs.yields[i][0] if lang == 'zh' else c.outputs.yields_en[i][0]) }}</span>
+        <span class="yd">{{ (c.outputs.yields[i][2] if lang == 'zh' else c.outputs.yields_en[i][2]) }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="io-grid">
+      <div class="io-col">
+        <p class="mini-h">{{ P(c.io.inputs_head, c.io.inputs_head_en) }}<em>{{ P(c.io.inputs_unit, c.io.inputs_unit_en) }}</em></p>
+        <div class="io-items">
+          {% for i in c.io.inputs %}
+          <div class="io-i"><b>{{ V(i) }}<i>{{ U(i) }}</i></b><span>{{ P(i.k, i.k_en) }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="io-col">
+        <p class="mini-h">{{ P(c.io.outputs_head, c.io.outputs_head_en) }}</p>
+        <div class="io-items">
+          {% for o in c.io.facts %}
+          <div class="io-i"><b>{{ V(o) }}<i>{{ U(o) }}</i></b><span>{{ P(o.k, o.k_en) }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="io-col">
+        <p class="mini-h">{{ P(c.io.annual_head, c.io.annual_head_en) }}</p>
+        <div class="io-items">
+          {% for a in c.io.annual %}
+          <div class="io-i"><b>{{ V(a) }}<i>{{ U(a) }}</i></b><span>{{ P(a.k, a.k_en) }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="test-band">
+      <p class="mini-h">{{ P(c.outputs.test_head, c.outputs.test_head_en) }}</p>
+      <div class="test-grid">
+        {% for t in c.outputs.test %}
+        <div class="t"><b>{{ t.v }}<i>{{ t.u }}</i></b><span>{{ P(t.k, t.k_en) }}</span></div>
+        {% endfor %}
+      </div>
+      <p class="fine">{{ P(c.outputs.test_src, c.outputs.test_src_en) }}</p>
+    </div>
+    <p class="fine">{{ P(c.io.note, c.io.note_en) }}</p>
+  </div>
+</section>
+
+{# ── 04 工厂 ──────────────────────────────────────────── #}
+<section class="sec sec-dark" id="factory">
+  <div class="wrap">
+    <div class="grid-2">
+      <div>
+        <p class="kicker"><em>04</em>{{ P(c.base.kicker, c.base.kicker_en) }}</p>
+        <h2>{{ P(c.base.lead, c.base.lead_en) }}</h2>
+        <p class="lead">{{ P(c.base.body, c.base.body_en) }}</p>
+        <div class="facts">
+          {% for f in c.base.facts %}
+          <div class="f"><span>{{ P(f.k, f.k_en) }}</span><b>{{ P(f.v, f.v_en) }}</b></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="factory-side">
+        <figure class="fig big">{{ img(c.base.image if c.base.image else c.base.photos[0].img, '', P(c.base.photos[0].cn, c.base.photos[0].en)) }}
+          <figcaption>{{ P(c.base.photos[0].cn, c.base.photos[0].en) }}</figcaption>
+        </figure>
+        <div class="qc">
+          <p class="mini-h">{{ P(c.quality.kicker, c.quality.kicker_en) }}</p>
+          {% for p in c.quality.points %}
+          <div class="row"><b>{{ P(p.cn, p.en) }}</b><span>{{ P(p.cn2, p.cn2_en) }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="gal">
+      {% for p in c.base.photos %}
+      <figure class="fig">{{ img(p.img, '', S(p.en, p.cn)) }}<figcaption>{{ P(p.cn, p.en) }}</figcaption></figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── 资质 ─────────────────────────────────────────────── #}
+<section class="sec" id="certs">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="kicker">{{ P(c.certs.kicker, c.certs.kicker_en) }}</p>
+      <h2>{{ P(c.certs.lead, c.certs.lead_en) }}</h2>
+    </div>
+    <div class="cert-grid">
+      {% for it in c.certs['items'] %}
+      <a class="cert reveal" href="{{ root }}/assets/img/{{ it.img }}" target="_blank" rel="noopener">
+        {{ img(it.img, '', P(it.cn, it.en)) }}
+        <b>{{ P(it.cn, it.en) }}</b>
+        <span>{{ P(it.cn2, it.cn2_en) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="fine">{{ P(c.certs.note, c.certs.note_en) }}</p>
+  </div>
+</section>
+
+{# ── 05 客户 ──────────────────────────────────────────── #}
+<section class="sec sec-alt" id="cases">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="kicker"><em>05</em>{{ P(c.cases.kicker, c.cases.kicker_en) }}</p>
+      <h2>{{ P(c.cases.lead, c.cases.lead_en) }}</h2>
+    </div>
+    <div class="stats4">
+      {% for s in c.cases.stats %}
+      <div class="s"><b>{{ s.num }}<i>{{ s.unit_en if lang == 'en' and s.unit_en is defined else s.unit }}</i></b><span>{{ S(s.cn, s.en) }}</span></div>
+      {% endfor %}
+    </div>
+    <div class="tablewrap">
+      <table class="tbl">
+        <thead>
+          <tr>{% for h in (c.cases.table_head if lang == 'zh' else c.cases.table_head_en) %}<th>{{ h }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {% for r in (c.cases.table if lang == 'zh' else c.cases.table_en) %}
+          <tr>{% for cell in r %}<td>{{ cell }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# ── 服务 ─────────────────────────────────────────────── #}
+<section class="sec" id="service">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="kicker">{{ P(c.service.kicker, c.service.kicker_en) }}</p>
+      <h2>{{ P(c.service.lead, c.service.lead_en) }}</h2>
+    </div>
+    <div class="svc-grid">
+      {% for it in c.service['items'] %}
+      <div class="svc"><span class="n">{{ it.num }}</span><b>{{ P(it.cn, it.en) }}</b><span>{{ P(it.cn2, it.cn2_en) }}</span></div>
+      {% endfor %}
+    </div>
+    <div class="timeline">
+      <p class="mini-h">{{ P(c.service.timeline_head, c.service.timeline_head_en) }}</p>
+      <div class="tl">
+        {% for t in c.service.timeline %}
+        <div class="tl-i"><b>{{ S(t.d, t.d_en) }}</b><span>{{ P(t.cn, t.en) }}</span></div>
+        {% endfor %}
+      </div>
+      <p class="fine">{{ P(c.service.note, c.service.note_en) }}</p>
+    </div>
+  </div>
+</section>
+
+{# ── 06 联系 ──────────────────────────────────────────── #}
+<section class="sec sec-cta" id="contact">
+  <div class="hexlattice" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="grid-2 cta-grid">
+      <div>
+        <p class="kicker"><em>06</em>{{ P(c.contact.kicker, c.contact.kicker_en) }}</p>
+        <h2>{{ P(c.contact.title, c.contact.title_en) }}</h2>
+        <p class="lead">{{ P(c.contact.factory, c.contact.factory_en) }}</p>
+        <p class="addr">{{ P(c.contact.address, c.contact.address_en) }}</p>
+        <div class="cta-actions">
+          <a class="btn" href="mailto:{{ c.contact.people[0].mail }}">{{ P('写信给我们', 'Email us') }}</a>
+          <a class="btn ghost" href="tel:{{ c.contact.people[0].phone|replace(' ', '') }}">{{ P('打电话', 'Call us') }}</a>
+        </div>
+      </div>
+      <div class="people">
+        {% for p in c.contact.people %}
+        <div class="person">
+          <span class="pn">{{ p.name }}</span>
+          <span class="pr">{{ P(p.role, p.role_en) }}</span>
+          <a class="pp" href="tel:{{ p.phone|replace(' ', '') }}">{{ p.phone }}</a>
+          {% if p.mail %}<a class="pm" href="mailto:{{ p.mail }}">{{ p.mail }}</a>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <p class="ft-code">{{ c.meta.code }}</p>
+    <div class="ft-brand">
+      <b>{% if lang == 'en' %}XINGE PYROLYSIS &amp; BIOCHAR MACHINERY{% else %}新歌环保{% endif %}</b>
+      <span>{{ 'XG ENVIRONMENTAL EQUIPMENT CO., LTD.' if lang == 'zh' else 'XG ENVIRONMENTAL EQUIPMENT CO., LTD.' }}</span>
+    </div>
+    <div class="ft-links">
+      {% if c.contact.web %}<a href="{{ c.contact.web if c.contact.web.startswith('http') else 'http://' ~ c.contact.web }}">{{ c.contact.web }}</a>{% endif %}
+      {% if c.contact.web2 %}<a href="{{ c.contact.web2 if c.contact.web2.startswith('http') else 'http://' ~ c.contact.web2 }}">{{ c.contact.web2 }}</a>{% endif %}
+      <a href="{{ root }}/{{ 'en/' if lang == 'en' else '' }}index.html">{{ '中文 / EN' if lang == 'en' else 'EN / 中文' }}</a>
+    </div>
+    <p class="ft-legal">{{ c.contact.legal }} · {{ c.meta.edition_en if lang == 'en' else c.meta.edition }} · {{ c.meta.code }}</p>
+  </div>
+</footer>
+
+<script>
+  const hd = document.getElementById('hd');
+  const onScroll = () => hd.classList.toggle('is-scrolled', window.scrollY > 24);
+  onScroll(); addEventListener('scroll', onScroll, {passive: true});
+
+  const burger = document.getElementById('burger'), nav = document.getElementById('nav');
+  const setNav = open => {
+    nav.classList.toggle('is-open', open);
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('nav-open', open);
+  };
+  burger.addEventListener('click', () => setNav(!nav.classList.contains('is-open')));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { setNav(false); burger.focus(); } });
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {rootMargin: '0px 0px -12% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
