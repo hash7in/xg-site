@@ -77,7 +77,7 @@
   <div class="wrap hero-stats">
     {% for s in c.cover.stats %}
     <div class="stat">
-      <b>{{ s.num }}<i>{{ s.unit_en if lang == 'en' and s.unit_en is defined else s.unit }}</i></b>
+      <b><span{% if s.num|length <= 3 and s.num.isdigit() %} data-count="{{ s.num }}"{% endif %}>{{ s.num }}</span><i>{{ s.unit_en if lang == 'en' and s.unit_en is defined else s.unit }}</i></b>
       <span>{{ S(s.cn, s.en) }}</span>
     </div>
     {% endfor %}
@@ -264,7 +264,7 @@
     </div>
     <div class="stats4">
       {% for s in c.cases.stats %}
-      <div class="s"><b>{{ s.num }}<i>{{ s.unit_en if lang == 'en' and s.unit_en is defined else s.unit }}</i></b><span>{{ S(s.cn, s.en) }}</span></div>
+      <div class="s"><b><span{% if s.num|length <= 3 and s.num.isdigit() %} data-count="{{ s.num }}"{% endif %}>{{ s.num }}</span><i>{{ s.unit_en if lang == 'en' and s.unit_en is defined else s.unit }}</i></b><span>{{ S(s.cn, s.en) }}</span></div>
       {% endfor %}
     </div>
     <div class="tablewrap">
@@ -382,7 +382,31 @@
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, {rootMargin: '0px 0px -12% 0px'});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 进场：标题组 + 列表项，成组的按 --d 错峰，只做一次
+  const groups = ['.sec-h', '.cards .card', '.combo-grid .combo', '.cert-grid .cert',
+                  '.gal .fig', '.svc-grid .svc', '.yield-grid .y'];
+  groups.forEach(sel => document.querySelectorAll(sel).forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.setProperty('--d', (i % 6) * 80 + 'ms');
+    io.observe(el);
+  }));
+
+  // 数字：滚到眼前再数上去（四位数如年份不动）
+  const countEls = document.querySelectorAll('[data-count]');
+  const count = el => {
+    const target = +el.dataset.count, t0 = performance.now(), dur = 1100;
+    const step = now => {
+      const p = Math.min((now - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(target * e));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { setTimeout(() => count(en.target), 350); cio.unobserve(en.target); } });
+  }, {threshold: .6});
+  countEls.forEach(el => cio.observe(el));
 </script>
 </body>
 </html>
