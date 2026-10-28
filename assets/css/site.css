@@ -408,6 +408,19 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
 .ft-links a:hover { color: #fff; }
 .ft-legal { flex-basis: 100%; padding-top: 18px; border-top: 1px solid var(--on-dark-line); font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; color: rgba(255,255,255,.32); }
 
+/* ── 右下角常驻 WhatsApp 入口 ───────────────────────────── */
+.wa {
+  position: fixed; right: 24px; bottom: 24px; z-index: 70;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 54px; padding: 0 18px 0 15px; border-radius: 999px;
+  background: #25D366; color: #fff;
+  box-shadow: 0 10px 26px rgba(11, 36, 55, .24), 0 2px 6px rgba(11, 36, 55, .12);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.wa:hover { background: #1EBE5B; color: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(11, 36, 55, .3); }
+.wa-i { width: 26px; height: 26px; fill: currentColor; flex: 0 0 auto; }
+.wa-t { font-family: var(--cn); font-size: 14px; font-weight: 500; letter-spacing: .02em; white-space: nowrap; }
+
 /* ── 响应式 ─────────────────────────────────────────────── */
 @media (max-width: 1000px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
@@ -445,6 +458,8 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
   .ft-links { margin-left: 0; flex-wrap: wrap; }
   .person { grid-template-columns: 1fr; }
   .person .pp, .person .pm { grid-column: 1; grid-row: auto; margin-top: 6px; }
+  .wa { right: 16px; bottom: 16px; height: 52px; width: 52px; padding: 0; }
+  .wa-t { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -551,3 +551,7 @@ contact:
   web: ""
   web2: ""
   legal: XG 环保装备 · XG ENVIRONMENTAL EQUIPMENT CO., LTD.
+  # 官网右下角 WhatsApp 悬浮入口（国际号码，可带 + / 空格 / 连字符，构建时自动清洗）
+  whatsapp: "+86 185 0309 0942"
+  whatsapp_msg: 你好，我在官网上看到你们的裂解 / 蒸馏 / 炭化设备，想咨询方案与报价。
+  whatsapp_msg_en: Hello, I saw your pyrolysis / distillation / carbonization plants online and would like a proposal and quote.
