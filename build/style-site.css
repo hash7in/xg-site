@@ -221,7 +221,7 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
   font-variant-numeric: tabular-nums;
 }
 .hero-stats .stat b i { font-family: var(--mono); font-size: .34em; font-weight: 500; color: var(--green-soft); margin-left: 5px; }
-.hero-stats .stat span {
+.hero-stats .stat > span {
   display: block; margin-top: 10px;
   font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
   color: rgba(255,255,255,.55);
@@ -380,7 +380,7 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
   color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums;
 }
 .stats4 .s b i { font-family: var(--mono); font-size: .36em; font-weight: 500; color: var(--green); margin-left: 4px; }
-.stats4 .s span { display: block; margin-top: 9px; font-size: 12.5px; color: var(--muted); }
+.stats4 .s > span { display: block; margin-top: 9px; font-size: 12.5px; color: var(--muted); }
 .tablewrap { overflow-x: auto; border: 1px solid var(--line); background: #fff; }
 .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 620px; }
 .tbl th {
