@@ -1,0 +1,83 @@
+# 品牌 / 全局配置 —— 所有提案共用，改一次全站生效。
+
+# 版式主题：vi（VI 手册风，默认，templates/style-vi-proposal.css）/ origin（Yueda 参考版）/ blueprint（工程图风）/ industrial（工业风）/ classic（咨询风）
+# 实际选中顺序：命令行 --theme / make THEME= → 客户卡 brand.theme → 按署名主体自动选
+#   （月达 Yueda 名义 → origin 白底；新歌 XG 名义 → vi VI 手册风）。
+# 这一行是「默认主题」基准，也决定输出文件名是否加 -<theme> 后缀。
+theme: vi
+
+company: XG
+company_cn: 新歌环保
+company_full: XINGE PYROLYSIS & BIOCHAR MACHINERY
+company_full_cn: 新歌环保
+# TODO 待填：官网域名（对外统一用这一个，别再出现旧域名）
+website: ""
+contact_person: Eva Tian · General Manager · +86 185 0309 0942 · binaryeva@gmail.com
+
+# ── 工厂档案（对外事实）────────────────────────────────────────────
+# 官网 / 提案 / 产品手册 / 视频文案里所有「厂有多硬」的数字，只从这里读，禁止硬编码。
+# 已填项的事实源自 kb/products/certifications.yaml（materials/docs 里的画册、公司简介、邀请函），
+# 两边不一致时 `--check` 会报；改一处必须同步另一处。
+factory:
+  location_cn: 河南省商丘市虞城县高新区筑润路西段
+  location_en: Yucheng High-tech Zone, Shangqiu, Henan, China
+  founded: "2018-12"
+  registered_capital_cny: 10000000
+  site_mu: 50                  # 厂区占地（亩）
+  staff: null                  # TODO 员工总数（文档只给「6 名设计人员、7 名工程师、10 名专家」，不是总人数）
+  workshop_m2: null            # TODO 车间面积（平米）
+  lines: null                  # TODO 产线数
+  monthly_capacity: null       # TODO 月产能（台/月）
+  lead_time_days: null         # 交期随机型：间歇式约 35 个工作日、连续式约 70 个工作日，见 kb/products/models.yaml
+  export_ports: [Qingdao]
+  patents: 12
+  export_countries: 30
+  certifications: [ISO9001, ISO14001, 欧盟 ISO 机械设备生产证书, 出口备案]
+  # 资质之外能拿来说服人的：产线能干什么、做过什么工况
+  strengths_cn:
+    - 裂解 / 蒸馏 / 炭化三类设备同厂设计制造与安装
+    - 30 多个国家出口记录（印度、巴西、泰国、马来西亚、坦桑尼亚、埃塞俄比亚等）
+    - 从环评办理到出油、油品销售的一站式交付
+  strengths_en:
+    - Pyrolysis, distillation and carbonization lines designed, built and installed in one factory
+    - Shipped to 30+ countries (India, Brazil, Thailand, Malaysia, Tanzania, Ethiopia, …)
+    - One-stop delivery from EIA support to first oil and product offtake
+  # 视频/图片素材索引，一条素材一个场景，见 assets/media/
+  # - {file: assets/media/shipping-2026-09.mp4, scene: 装柜发货, usable_in: [social, site, proposal]}
+  media: []
+
+# ── 商务内部事实（绝不进 PDF / 官网 / 任何对外材料）──────────────
+# 模板与渲染代码永远不读这一块。
+commercial:
+  commission:
+    rate: null                 # TODO 分佣比例，如 0.08
+    basis: net_received        # net_received（工厂实收）/ invoice_amount（合同额）
+    trigger: ""                # TODO 触发节点，如 客户首付款到账
+    settle_days: null          # TODO 结算天数
+  owner_contact: ""            # TODO 工厂老板联系方式
+  customer_protection: ""      # TODO 客户报备保护条款，如 报备客户 90 天内不得直联
+  notes: ""
+
+# ── 品牌标志（XG 字标）─────────────────────────────────────────────
+# 用法与禁用规则见 design/BRAND.md。浅底用 logo，深底用 logo_light，
+# 头像 / 水印 / favicon 用 mark，单色 / 叠图用 mark_mono（全白透明）。
+logo: assets/brand/logo.svg
+logo_light: assets/brand/logo-light.svg
+logo_mark: assets/brand/logo-mark.svg
+logo_mark_reverse: assets/brand/logo-mark-reverse.svg
+logo_mark_mono: assets/brand/logo-mark-mono.svg
+
+# 主题色（取自原提案 HTML 里的真实色值）
+primary: "#123F5F"             # 深海军蓝
+primary_2: "#1E628C"
+accent: "#4B963F"              # 品牌绿
+accent_light: "#8DCB80"
+ink: "#16212B"
+deep: "#0B2437"              # 封面渐变起点 / 深底
+muted: "#64727F"
+line: "#E3E8EE"
+tint: "#F6F8FA"
+cover_bg: "linear-gradient(158deg,#0B2437 0%,#123F5F 52%,#1B5680 100%)"
+
+font_sans: "'Barlow','Inter','HarmonyOS Sans SC','Noto Sans Math','Noto Naskh Arabic','PingFang SC','Microsoft YaHei',sans-serif"
+font_mono: "'Inter','DejaVu Sans Mono',monospace"   # 位号/编号用 Inter + 等宽数字，避免多引一个字体

@@ -2,24 +2,22 @@
 """官网 —— 一份文案数据，生成中英两个静态页面。
 
 用法（在本仓根目录）:
-    uv run --project ~/liejie python build/site.py          # 出 index.html + en/index.html
-    uv run --project ~/liejie python build/site.py --fast    # 跳过图片重新压缩（只改文案时用）
+    python build/site.py            # 出 index.html + en/index.html
+    python build/site.py --fast     # 跳过图片重新压缩（只改文案时用）
 
-数据来源（均在生成仓 ~/liejie，LJ_ROOT 可覆盖）:
-    content/zh/brochure.yaml   画册/官网站共用文案（中英对照，唯一需要改的文件）
+本仓自带（自包含，clone 即可构建）:
+    content/brochure.yaml      画册/官网站共用文案（中英对照，唯一需要改的文件；
+                               画册 PDF 在 ~/liejie，反向读这份）
     brand.yaml                 公司英文名 / 色值 / 工厂事实
-    assets/images/brochure/    配图（构建时压到 ≤1400px，输出 assets/img/）
+    assets/src/                配图原件（构建时压到 ≤1400px → assets/img/）
     assets/fonts/ · assets/brand/
-
-本仓自带：build/site.html + build/style-site.css
+    build/site.html + style-site.css
 
 产物是纯静态站点：直接丢给 nginx / GitHub Pages / 对象存储即可，不需要 Node。
 """
 from __future__ import annotations
 
 import argparse
-import os
-import shutil
 from pathlib import Path
 
 import yaml
@@ -27,13 +25,9 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 HERE = Path(__file__).resolve().parent        # build/
 WEB = HERE.parent                             # 仓根 = 站点根
-LJ = Path(os.environ.get("LJ_ROOT") or "~/liejie").expanduser()
-
-CONTENT = LJ / "content" / "zh" / "brochure.yaml"
-SRC_IMG = LJ / "assets" / "images" / "brochure"
-SRC_FONT = LJ / "assets" / "fonts"
-SRC_BRAND = LJ / "assets" / "brand"
-BRAND = LJ / "brand.yaml"
+CONTENT = WEB / "content" / "brochure.yaml"
+SRC_IMG = WEB / "assets" / "src"
+BRAND = WEB / "brand.yaml"
 
 IMAGES = [
     "cover-kiln.jpg", "cover-hero.jpg", "continuous-line.jpg", "hall-lines.jpg", "plant.jpg", "workshop-lead.jpg", "ship-reactor.jpg", "drums-pair.jpg",
@@ -92,22 +86,6 @@ def optimise_images(force: bool) -> dict[str, tuple[int, int]]:
     return dims
 
 
-def copy_fonts() -> None:
-    dst = WEB / "assets" / "fonts"
-    dst.mkdir(parents=True, exist_ok=True)
-    for _, _, fname in FONTS:
-        src = SRC_FONT / fname
-        if src.exists():
-            shutil.copy2(src, dst / fname)
-
-
-def copy_brand() -> None:
-    dst = WEB / "assets" / "brand"
-    dst.mkdir(parents=True, exist_ok=True)
-    for src in sorted(SRC_BRAND.glob("*.svg")):
-        shutil.copy2(src, dst / src.name)
-
-
 def font_css() -> str:
     rules = []
     for family, weight, fname in FONTS:
@@ -129,8 +107,6 @@ def main() -> int:
     brand = yaml.safe_load(BRAND.read_text(encoding="utf-8")) or {}
 
     dims = optimise_images(force=not args.fast)
-    copy_fonts()
-    copy_brand()
 
     css = (HERE / "style-site.css").read_text(encoding="utf-8").replace(
         "/*@FONTS@*/", font_css()
@@ -164,7 +140,7 @@ def main() -> int:
 
     size = sum(f.stat().st_size for f in WEB.rglob("*") if f.is_file() and ".git" not in f.parts) / 1024 / 1024
     print(f"✓ {WEB} 共 {size:.1f} MB（图片 {len(IMAGES)} 张）")
-    print(f"  预览：uv run python -m http.server 8080 -d {WEB}")
+    print(f"  预览：python -m http.server 8080 -d {WEB}")
     return 0
 
 

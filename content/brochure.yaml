@@ -1,0 +1,553 @@
+# 企业宣传手册文案包 —— 中文为主、英文副标（对外画册，不含任何价格/底价/内部条款）
+# 事实来源：kb/products/certifications.yaml、lines.yaml、models.yaml、yields.yaml、quality.yaml、cases.yaml
+# 图片：assets/images/brochure/（由 materials/ 与 assets/images/ 择优裁切，见 src/brochure.py 注释）
+
+meta:
+  doc: 企业宣传手册
+  doc_en: COMPANY PROFILE
+  edition: 2026 版
+  edition_en: 2026 Edition
+  code: XG-CP-2026
+
+cover:
+  image: cover-hero.jpg
+  hero_image: cover-kiln.jpg
+  kicker: XG 环保装备
+  kicker_en: XG ENVIRONMENTAL EQUIPMENT CO., LTD.
+  title: 热解 · 蒸馏 · 炭化
+  title_en: PYROLYSIS · DISTILLATION · CARBONIZATION
+  sub: 成套装备制造 · 交钥匙交付
+  sub_en: TURNKEY EQUIPMENT MANUFACTURING & COMMISSIONING
+  eyebrow: SINCE 2018 · SHANGQIU, HENAN
+  line: 从废料到资源，从图纸到出油。
+  line_en: From waste to resource — designed, built and commissioned by one factory.
+  stats:
+    - {num: "2018", unit: 年, unit_en: "", cn: 建厂年份, en: FOUNDED}
+    - {num: "50", unit: 亩, unit_en: mu, cn: 厂区占地, en: SITE AREA}
+    - {num: "12", unit: 项, unit_en: "", cn: 专利技术, en: PATENTS}
+    - {num: "30", unit: +, unit_en: +, cn: 出口国家, en: COUNTRIES}
+
+toc:
+  title: 目录
+  title_en: CONTENTS
+  image: hall-lines.jpg
+  items:
+    - {num: "01", page: "03", cn: 企业简介, en: Company Profile}
+    - {num: "02", page: "04", cn: 数字看 XG, en: XG in Numbers}
+    - {num: "03", page: "05", cn: 生产基地, en: Manufacturing Base}
+    - {num: "04", page: "06", cn: 制造与品控, en: Fabrication & QC}
+    - {num: "05", page: "07", cn: 资质与认证, en: Certifications}
+    - {num: "06", page: "08", cn: 产品矩阵, en: Product Lines}
+    - {num: "07", page: "09", cn: 间歇式 / 撬装式裂解, en: Batch & Skid Pyrolysis}
+    - {num: "08", page: "10", cn: 连续式裂解, en: Continuous Pyrolysis}
+    - {num: "09", page: "11", cn: 废油蒸馏精制, en: Distillation}
+    - {num: "10", page: "12", cn: 生物质炭化, en: Carbonization}
+    - {num: "11", page: "13", cn: 适用原料, en: Available Feedstock}
+    - {num: "12", page: "14", cn: 产物与应用, en: Outputs & Applications}
+    - {num: "13", page: "15", cn: 投入与产出, en: Inputs & Outputs}
+    - {num: "14", page: "16", cn: 工艺流程与安全, en: Process & Safety}
+    - {num: "15", page: "17", cn: 客户与现场, en: Clients & Sites}
+    - {num: "16", page: "18", cn: 服务与交付, en: Service & Delivery}
+    - {num: "17", page: "19", cn: 联系我们, en: Contact}
+
+about:
+  kicker: 企业简介
+  kicker_en: COMPANY PROFILE
+  lead: 一家把「图纸、钢板、焊缝、试机、出油」放在同一个厂区里的热解装备制造商。
+  lead_en: One factory that owns the whole chain — drawings, steel plates, welds, test runs and the first barrel of oil.
+  paras:
+    - cn: 我们的河南生产基地 2018 年 12 月投产，占地 50 亩，注册资本 1000 万元。基地专注废轮胎、废塑料、废橡胶、废机油与生物质的热解（裂解）、蒸馏精制、炭化成套装备的设计、制造、安装与售后。
+      en: Our Henan production base has been running since December 2018 — a 50-mu site with CNY 10 million in registered capital, specialising in pyrolysis, distillation and carbonization plants for waste tyres, plastics, rubber, waste oil and biomass.
+    - cn: 我们不做转手贸易。设计、下料、卷板、焊接、机加工、装配、试机、装车全部在自有厂区完成；五条产品线共用同一套工艺与质量体系，同一批工程师从图纸一直跟到客户出油。
+      en: We do not resell. Cutting, rolling, welding, machining, assembly, test running and loading all happen on our own floor — with the same engineers following each project from drawing to first oil.
+    - cn: 从环评协助、设备制造、现场安装调试，到人员培训、备件供应与油品外销对接，XG 提供一站式交付。客户只需准备场地、原料与手续，其余交给工厂。
+      en: From EIA support and fabrication to site installation, operator training, spare parts and offtake introduction, XG delivers turnkey. The client prepares the site, the feedstock and the permits — the rest is ours.
+  facts:
+    - {k: 成立时间, k_en: Founded, v: 2018 年 12 月, v_en: Dec 2018}
+    - {k: 注册资本, k_en: Registered capital, v: 1000 万元, v_en: CNY 10 million}
+    - {k: 厂区占地, k_en: Site area, v: 50 亩, v_en: 50 mu (≈3.3 ha)}
+    - {k: 设计团队, k_en: Design team, v: 6 名设计人员, v_en: 6 design engineers}
+    - {k: 专利技术, k_en: Patents, v: 12 项, v_en: 12}
+    - {k: 出口国家, k_en: Export countries, v: 30 多个, v_en: 30+}
+    - {k: 主营产品, k_en: Products, v: 热解 / 蒸馏 / 炭化, v_en: Pyrolysis · Distillation · Carbonization}
+    - {k: 交付方式, k_en: Delivery, v: 设计 → 制造 → 安装 → 出油, v_en: Design → Build → Install → First oil}
+  image: continuous-line.jpg
+  image_cap: 40 TPD 连续式裂解产线车间实拍
+  image_cap_en: 40 TPD continuous pyrolysis line under fabrication
+
+numbers:
+  kicker: 数字看 XG
+  kicker_en: XG IN NUMBERS
+  items:
+    - {num: "2018", unit: "", cn: 建厂年份, en: Founded}
+    - {num: "50", unit: 亩, cn: 厂区占地，自有车间与试机位, en: Self-owned site}
+    - {num: "12", unit: 项, cn: 专利技术，覆盖出渣、密封、冷凝结构, en: Patents}
+    - {num: "30", unit: "+", cn: 出口国家，远至巴西、坦桑尼亚、埃塞俄比亚, en: Export countries}
+    - {num: "5", unit: 条, cn: 产品线：间歇 / 撬装 / 连续 / 蒸馏 / 炭化, en: Product lines}
+    - {num: "70", unit: "+", cn: 份客户定制方案与报价，中英西阿多语种, en: Custom proposals}
+  note: 数字口径来自公司资质文件、专利证书与在案客户方案，原件可现场查验。
+  note_en: Figures traceable to company registration, patent certificates and client files on record.
+  image: drums-row.jpg
+  image_cap: 车间内成排待交付的间歇式裂解主炉
+  image_cap_en: Batch reactors lined up in the workshop
+
+base:
+  kicker: 生产基地
+  kicker_en: MANUFACTURING BASE
+  lead: 50 亩厂区，从钢板到整机不出厂。
+  lead_en: Steel in, complete plants out — without leaving the yard.
+  body: 厂房内配行车、卷板、下料、机加工、焊接与总装工位，主炉、冷凝、除尘、气路、电控按整线预装后再拆运。批量订单一排排下料、一排排焊接，交期可控；客户到厂可随时看到自己的设备做到哪一步。
+  body_en: Overhead cranes, rolling, cutting, machining, welding and final assembly under one roof. Each plant is pre-assembled as a full line — reactor, condensation, dedusting, gas train and controls — then split for shipment. Clients can walk in any day and see exactly how far their unit has gone.
+  photos:
+    - {img: hall-lines.jpg, cn: 总装车间：两条产线并行布置，可同时施工多台主机, en: "Assembly hall, two parallel lines — several reactors under construction at once"}
+    - {img: ship-reactor.jpg, cn: 主炉装车：齿圈、滚圈、底座整机固定后发运, en: "Reactor on the trailer — gear ring, riding rings and base strapped as one unit"}
+    - {img: drums-pair.jpg, cn: 空载试机：温控、压力、密封逐项确认后出厂, en: "No-load test run — temperature, pressure and sealing signed off before dispatch"}
+  facts:
+    - {k: 厂区占地, v: 50 亩, k_en: Site area, v_en: 50 mu}
+    - {k: 车间与总装工位, v: 自有, k_en: Workshop & assembly, v_en: Self-owned}
+    - {k: 主体材质, v: Q345R / 12CrMoV, k_en: Shell material, v_en: Q345R / 12CrMoV}
+    - {k: 随机文件, v: 图纸 · 试机记录 · 备件清单, k_en: Documents, v_en: Drawings · test records · spares list}
+  steps:
+    - {num: "01", cn: 下料卷板, cn2: 主炉钢板按图纸放样，数控下料、卷制成型, en: Cutting & rolling, cn2_en: "Shell plate laid out to drawing, CNC cut and rolled"}
+    - {num: "02", cn: 筒体焊接, cn2: Q345R / 12CrMoV 锅炉板按压力容器工艺施焊，持证焊工, en: Shell welding, cn2_en: Q345R / 12CrMoV boiler plate welded to pressure-vessel practice by certified welders}
+    - {num: "03", cn: 机加工, cn2: 齿圈、滚圈、拖轮、密封面加工与配对, en: Machining, cn2_en: "Girth gear, riding rings, rollers and sealing faces machined and matched"}
+    - {num: "04", cn: 整线装配, cn2: 主机与冷凝、除尘、气路、电控预装成线, en: Line assembly, cn2_en: "Reactor pre-assembled with condensation, dedusting, gas train and controls"}
+    - {num: "05", cn: 空载试机, cn2: 试运行、气密与温控确认，记录随机, en: Test run, cn2_en: Trial run with air-tightness and temperature checks; records ship with the unit}
+    - {num: "06", cn: 涂装标识, cn2: 除锈、底漆面漆、铭牌与位号, en: Painting, cn2_en: "Derusting, primer and topcoat, nameplate and tag numbers"}
+    - {num: "07", cn: 装车发货, cn2: 整机或分段装车，随机文件与备件同行, en: Loading, cn2_en: "Shipped whole or in sections, with documents and spares on board"}
+
+quality:
+  kicker: 制造与品控
+  kicker_en: FABRICATION & QUALITY CONTROL
+  lead: 每一台主炉都有编号、有图纸、有检验记录。
+  lead_en: Every reactor ships with a serial number, a drawing set and an inspection record.
+  body: 制造不是把钢板焊起来就完事。主炉按压力容器工艺施焊，齿圈与拖轮配对研磨，整线预装后通水通电试运行；出厂前逐台留下检验记录，到了客户现场我们对中、找正、联动调试，直到稳定出油。
+  body_en: Fabrication is more than welding plates together. Shells are welded to pressure-vessel practice, girth gears and riding rings are matched and ground, and every line is pre-assembled, then run with water, power and feedstock before dispatch.
+  image: workshop-lead.jpg
+  points:
+    - {cn: 材料, cn2: 主炉采用 Q345R / 12CrMoV 锅炉合金钢板，按批次留材质证明与复验记录, en: Material, cn2_en: Shells in Q345R / 12CrMoV boiler plate; mill certificates and re-test records kept per batch}
+    - {cn: 焊接, cn2: 持证焊工施焊，ASME IX（GTAW · 6G · P-No.1）资格评定在案，焊缝外观与射线检验, en: Welding, cn2_en: Certified welders to ASME IX (GTAW · 6G · P-No.1); visual and radiographic examination}
+    - {cn: 检验, cn2: 气密试验、水压试验、整机空载与带料试运行，逐项签字后才放行, en: Inspection, cn2_en: "Air-tight test, hydrostatic test, no-load and loaded trial runs — signed off item by item"}
+    - {cn: 追溯, cn2: 主炉、齿圈、拖轮、密封件逐台建档，出厂附铭牌、随机图册与备件清单, en: Traceability, cn2_en: "Reactor, girth gear, riding rings and seals filed per unit; nameplate, drawings and spares list ship with it"}
+    - {cn: 现场, cn2: 安装队随设备进场，负责对中、找正、管线、电气与联动调试, en: On site, cn2_en: "Installation crew on site for alignment, piping, electrical and interlock commissioning"}
+  memo: 客户可以到厂监造：站在自己那台主炉旁边，看钢板、看焊缝、看试机。
+  memo_en: Clients are welcome to supervise in person — stand next to your own reactor, check the plate, the welds and the test run.
+  asme_cap: ASME IX 焊工技能评定证书（GTAW · 6G · P-No.1 · 壁厚 5.54 mm）
+  asme_cap_en: ASME IX welder qualification (GTAW, 6G, P-No.1, 5.54 mm)
+
+certs:
+  kicker: 资质与认证
+  kicker_en: CERTIFICATIONS
+  lead: 体系、出口与专利，按标准编号可核验。
+  lead_en: Management systems, export registration and patents — verifiable by standard number.
+  items:
+    - {k: GB/T 19001-2016 / ISO 9001:2015, cn: 质量管理体系, cn2: 蒸馏设备、废旧轮胎裂解设备的生产 · NOA 颁发, en: Quality management, cn2_en: Scope — distillation and waste-tyre pyrolysis equipment · issued by NOA, img: cert-iso9001.jpg}
+    - {k: GB/T 24001-2016 / ISO 14001:2015, cn: 环境管理体系, cn2: 同一认证范围 · NOA 颁发, en: Environmental management, cn2_en: Same scope · issued by NOA, img: cert-iso14001.jpg}
+    - {k: 2006/42/EC · EN ISO 12100 · EN 60204-1, cn: 欧盟机械指令 CE, cn2: 轮胎 / 塑料热解设备 · UDEM 颁发, en: CE / Machinery Directive, cn2_en: Tyre and plastic pyrolysis equipment · issued by UDEM, img: cert-ce.jpg}
+    - {k: 备案登记编号 01519445, cn: 对外贸易经营者备案, cn2: 进出口企业代码在册，可自主出口报关, en: Export registration, cn2_en: Import / export code on record — direct customs declaration, img: cert-export.jpg}
+    - {k: ZL 2021 2 1907779.7, cn: 实用新型专利, cn2: 一种新型风运负压出渣装置, en: Utility model patent, cn2_en: Negative-pressure pneumatic discharge device, img: cert-patent.jpg}
+  docs_head: 随机文件（每台）
+  docs_head_en: DOCUMENTS WITH EVERY UNIT
+  docs:
+    - {cn: 总图与基础图, en: General arrangement & foundation drawings}
+    - {cn: 主材材质单, en: Mill certificates}
+    - {cn: 焊缝检验报告, en: Weld inspection reports}
+    - {cn: 气密与水压记录, en: Air-tight & hydrostatic records}
+    - {cn: 空载试机记录, en: No-load trial run records}
+    - {cn: 合格证与铭牌, en: Certificate of conformity & nameplate}
+    - {cn: 装箱单, en: Packing list}
+    - {cn: 备件清单, en: Spare parts list}
+  note: 公司累计 12 项专利技术。资质文件可到厂查验；对外文件不引用未经核实的有效期。
+  note_en: 12 patents in total. Documents are available for inspection; validity dates are not quoted unless verified.
+
+lines:
+  kicker: 产品矩阵
+  kicker_en: PRODUCT LINES
+  lead: 五条产品线，一套工艺体系：热解出油 → 蒸馏提纯 → 炭渣深加工，可单机、可整线、可组合。
+  lead_en: Five lines on one process platform — pyrolysis to oil, distillation to fuel, carbon residue to value. Single units, full lines, or combinations.
+  items:
+    - {num: "01", cn: 间歇式裂解, en: Batch Pyrolysis, cap: 1 – 45 TPD, img: r-batch.jpg,
+cn2: 卧式旋转釜，一批一釜；整胎近乎直接进料（只需切圈口），抓机出钢丝、炭黑装吨袋，两份都能卖。,
+cn2_en: "Horizontal rotary reactor, one batch per charge; whole tyres feed almost as they are — bead cut only. Wire comes out by grab, carbon black in bulk bags; both are saleable."}
+    - {num: "02", cn: 撬装式裂解, en: Skid-Mounted, cap: 1 – 4 TPD, img: r-hotskid.jpg,
+cn2: 一体撬装，到场接管即用；适合小规模试产与分布式收集点。,
+cn2_en: "Reactor, condenser and controls on one skid — running on arrival, built for pilot runs and distributed collection points."}
+    - {num: "03", cn: 连续式裂解, en: Continuous Pyrolysis, cap: 30 – 50 TPD, img: r-continuous.jpg,
+cn2: 氮气置换、连续进出料，高温密封出渣不停机，一台炉两名工人。,
+cn2_en: "Nitrogen purged, continuous in and out; sealed discharge at temperature without stopping. One reactor, two operators."}
+    - {num: "04", cn: 废油蒸馏, en: Distillation, cap: 8 – 30 TPD, img: r-distill.jpg,
+cn2: 常压 / 减压精馏，柴油组分收率 75%–90%，无工艺污水外排。,
+cn2_en: "Atmospheric or vacuum distillation, 75–90% diesel-range yield, no process wastewater."}
+    - {num: "05", cn: 生物质炭化, en: Carbonization, cap: 1 – 3 t/h, img: r-carbon.jpg,
+cn2: 连续式气炭联产，自产可燃气回供，1/3 热能自用、2/3 供烘干。,
+cn2_en: "Continuous gas-and-char co-generation; self-fuelled, one third of the heat runs the line, two thirds dry the feed."}
+
+  combos_head: 常见组合
+  combos_head_en: TYPICAL COMBINATIONS
+  combos:
+    - {t: 裂解 + 蒸馏, t_en: Pyrolysis + Distillation, d: 裂解油再精制成柴油类工业燃料，一座厂把油卖上价。, d_en: Re-refine pyrolysis oil into diesel-range fuel — sell oil at fuel price from one site.}
+    - {t: 裂解 + 炭化, t_en: Pyrolysis + Carbonization, d: 炭渣深加工为再生炭黑、炭基材料，把「废料」做成产品。, d_en: Upgrade carbon residue into recovered carbon black and carbon materials.}
+    - {t: 蒸馏 + 撬装裂解, t_en: Distillation + Skid, d: 小规模试产：2×1 TPD 撬装配 1 TPD 蒸馏，先跑通再扩产。, d_en: "Pilot first — 2×1 TPD skids plus 1 TPD distillation, prove the flow, then scale."}
+
+batch:
+  num: "07"
+  kicker: 间歇式 / 撬装式裂解
+  kicker_en: BATCH & SKID PYROLYSIS
+  lead: 结构最简、上手最快的一条线，也是出口量最大的一条。
+  lead_en: The simplest line to run — and our most exported one.
+  image: drums-row.jpg
+  intro: 卧式旋转主炉，一批一釜：装料、密闭、升温裂解、冷却、出渣，单批约 20 小时。整胎近乎直接进料，只需切圈口，无需切块或磨粉；钢丝由抓机掏出，炭黑经螺旋进吨袋。撬装型把主炉、冷凝、气路、控制柜装进一个底座，1–4 TPD 到场接管即用。
+  intro_en: "Horizontal rotary reactor, one batch per charge — loading, sealing, heating, cooling, discharge, about 20 hours per batch. Whole tyres feed almost as they are: bead cut only, no shredding or grinding. Wire is lifted out by grab, carbon black goes into bulk bags by screw. The skid version packs reactor, condenser, gas train and control panel onto one base for 1–4 TPD, ready on arrival."
+  specs_head: [型号档位, 日处理量, 主炉规格, 材质, 单批周期, 出油率]
+  specs_head_en: [Model, Capacity, Reactor, Shell material, Batch cycle, Oil yield]
+  specs:
+    - ["YD-10", "10 t/d", "φ2600 × 6600 × 18", "Q345R", "约 20 h", "45%–50%"]
+    - ["YD-15", "15 t/d", "φ2800 × 8000 × 18", "Q345R", "约 20 h", "45%–50%"]
+    - ["YD-20", "20 t/d", "φ3200 × 8000 × 20", "Q345R", "约 20 h", "45%–50%"]
+    - ["YD-S1", "撬装 1 t/d", "φ1200 × 2500 × 14", "Q345R", "一体撬装", "按原料定"]
+  specs_en:
+    - ["YD-10", "10 t/d", "φ2600 × 6600 × 18", "Q345R", "≈20 h", "45%–50%"]
+    - ["YD-15", "15 t/d", "φ2800 × 8000 × 18", "Q345R", "≈20 h", "45%–50%"]
+    - ["YD-20", "20 t/d", "φ3200 × 8000 × 20", "Q345R", "≈20 h", "45%–50%"]
+    - ["YD-S1", "skid 1 t/d", "φ1200 × 2500 × 14", "Q345R", "single skid", "feedstock based"]
+  specs_note: 1 / 2 / 5 / 10 / 15 / 20 / 45 TPD 均可定做；同吨位可按原料与批次策略换釜体。
+  specs_note_en: 1 / 2 / 5 / 10 / 15 / 20 / 45 TPD available; shell size may be re-matched to feedstock and batch strategy.
+  highlights:
+    - {cn: 整胎进料, cn2: 全尺寸整胎，唯一预处理是切圈口；无需切块、无需磨粉，近乎整胎直接进料, en: Whole-tyre feed, cn2_en: Any tyre size; the only pre-treatment is a bead cut — no shredding, no grinding, the tyre goes in almost whole}
+    - {cn: 两份可卖产物, cn2: 钢丝抓机掏出，炭黑螺旋进吨袋；钢丝与炭黑都是有价产物，不是废料, en: Two saleable solids, cn2_en: Wire out by grab, carbon black out by screw conveyor — both sell on, neither is waste}
+    - {cn: 不凝气回用, cn2: 不凝气回收后作后续批次釜底加热燃料，大幅降低本体燃料需求, en: Off-gas reused, cn2_en: Non-condensable gas is recovered and fired under the drum to heat later batches, cutting the line's own fuel demand sharply}
+    - {cn: 微负压运行, cn2: 油气不外泄；超压自动泄放、紧急停火, en: Slight negative pressure, cn2_en: Slight negative pressure keeps vapour inside; relief and emergency shut-off on overpressure}
+  photos:
+    - {img: r-batch.jpg, cn: 间歇式产线 3D 方案图, en: Batch line — 3D layout}
+    - {img: ship-truck.jpg, cn: 整机装车发运, en: Reactor loaded for shipment}
+  foot: 制造约 35 个工作日 · 现场安装 20 天 · 试运行培训 3 天 · 整机质保 12 个月
+  foot_en: ~35 working days fabrication · 20 days installation · 3 days trial run & training · 12-month warranty
+
+continuous:
+  num: "08"
+  kicker: 连续式裂解
+  kicker_en: CONTINUOUS PYROLYSIS
+  lead: 不停机、不降温，把「一批一釜」变成一条流水线。
+  lead_en: No shutdown, no cooling — batch becomes a production line.
+  image: continuous-line.jpg
+  intro: 卧式旋转主机配螺旋连续进料与高温密封出渣：氮气置换后升温至 400 °C 左右，原料连续进、油气连续出、炭渣连续排，省掉升降温热损。废气经二级喷淋脱硫除尘后排放，配脱硝选配可达项目地标准。
+  intro_en: A rotary reactor with screw feeding and high-temperature sealed discharge. After nitrogen purging the shell is heated to about 400 °C; feed, oil vapour and residue flow continuously, removing heat-up and cool-down losses. Flue gas passes two-stage desulphurization and dedusting, with DeNOx available to meet local limits.
+  specs_head: [机型, 日处理量, 主炉规格, 材质, 装机功率, 占地, 人工, 使用寿命]
+  specs_head_en: [Model, Capacity, Reactor, Shell material, Power, Footprint, Crew, Service life]
+  specs:
+    - ["YD-C30", "30 t/d", "φ1800 × 24000 × 16", "Q345R", "100 kW", "350 ㎡", "3 人", "5–8 年"]
+    - ["YD-C45", "45 t/d", "φ1800 × 36000 × 18", "12CrMoV", "120 kW", "500 ㎡", "3 人", "8–10 年"]
+  specs_en:
+    - ["YD-C30", "30 t/d", "φ1800 × 24000 × 16", "Q345R", "100 kW", "350 m²", "3", "5–8 yr"]
+    - ["YD-C45", "45 t/d", "φ1800 × 36000 × 18", "12CrMoV", "120 kW", "500 m²", "3", "8–10 yr"]
+  specs_note: 常用 30 / 40 / 50 t/d，可定做；45 t/d 项目按 8 套主机配置，年处理胶粉约 10 万吨。
+  specs_note_en: Standard 30 / 40 / 50 t/d, custom available; the 45 t/d project runs 8 reactor sets, about 100,000 t of crumb per year.
+  highlights:
+    - {cn: 连续进料连续出渣, cn2: 高温密封出渣，无需降温开门，单台炉两名工人, en: "Continuous in, continuous out", cn2_en: "Sealed discharge at temperature, no cooling or door opening; two operators per reactor"}
+    - {cn: 自产气回用, cn2: 不凝气经两级水封 + 阻火器进热风炉，供后续批次加热，大幅降低燃料消耗, en: Off-gas reuse, cn2_en: Off-gas passes two water seals and a flame arrestor into the hot-air furnace, heating later batches and cutting fuel consumption sharply}
+    - {cn: 二级脱硫除尘, cn2: 喷淋塔 + 引风机 + 烟囱，白烟无黑烟；脱硝可按标准选配, en: Two-stage scrubbing, cn2_en: "Spray tower, induced-draft fan and stack — white plume, no black smoke; DeNOx optional to local limits"}
+    - {cn: 大型主机自制, cn2: 12CrMoV 锅炉合金钢板筒体，齿圈传动 0.4 r/min, en: Large shells in-house, cn2_en: "12CrMoV boiler-alloy shell, girth-gear drive at 0.4 r/min"}
+  photos:
+    - {img: r-continuous.jpg, cn: 连续式产线 3D 方案图, en: Continuous line — 3D layout}
+    - {img: ship-reactor.jpg, cn: 主炉装车发运, en: Reactor on the trailer}
+  foot: 合同签订后约 70 个工作日交货 · 质保 3 年（易损件除外） · 终身免费检测维护
+  foot_en: ~70 working days delivery · 3-year warranty (wear parts excluded) · lifetime inspection support
+
+distillation:
+  num: "09"
+  kicker: 废油蒸馏精制
+  kicker_en: DISTILLATION & REFINING
+  lead: 把裂解油、废机油做成能卖上价的柴油类工业燃料。
+  lead_en: Turning pyrolysis oil and waste lube into sellable diesel-range fuel.
+  image: dist-indoor.jpg
+  intro: 常压或减压精馏：预热、反应釜、提气塔、盘管与列管冷凝、分流油罐、脱硫除尘器一体成线。减压下各组分沸点降低，气化温度比常压提前约 50 °C、终馏温度低约 80 °C，抑制塔内分解聚合，油色更清亮、硫更低，燃料成本约省 20%。
+  intro_en: Atmospheric or vacuum distillation — preheater, reactor, stripping column, coil and shell-and-tube condensers, fraction tanks and scrubber on one line. Under vacuum boiling points drop — vaporization starts about 50 °C earlier and end point is about 80 °C lower, suppressing cracking and polymerization, giving brighter, lower-sulphur product at roughly 20% less fuel.
+  specs_head: [系列, 日处理量, 主炉规格, 材质, 柴油组分收率, 装机功率, 占地, 人工]
+  specs_head_en: [Series, Capacity, Reactor, Material, Diesel yield, Power, Footprint, Crew]
+  specs:
+    - ["ZL-1600", "8 – 10 t/d", "φ1600 × 6600", "Q345R", "75%–90%", "16.7–24.2 kW", "200–400 ㎡", "2–3 人"]
+    - ["ZL-2200", "15 – 20 t/d", "φ1800 × 7000", "Q345R", "75%–90%", "16.7–24.2 kW", "200–400 ㎡", "2–3 人"]
+    - ["ZL-2400", "20 – 30 t/d", "φ1800 × 7700", "Q345R / 310S", "75%–90%", "16.7–24.2 kW", "200–400 ㎡", "2–3 人"]
+  specs_en:
+    - ["ZL-1600", "8 – 10 t/d", "φ1600 × 6600", "Q345R", "75%–90%", "16.7–24.2 kW", "200–400 m²", "2–3"]
+    - ["ZL-2200", "15 – 20 t/d", "φ1800 × 7000", "Q345R", "75%–90%", "16.7–24.2 kW", "200–400 m²", "2–3"]
+    - ["ZL-2400", "20 – 30 t/d", "φ1800 × 7700", "Q345R / 310S", "75%–90%", "16.7–24.2 kW", "200–400 m²", "2–3"]
+  specs_note: 20 t/d 以下实际占地 <200 ㎡；催化剂 1 吨可处理 800–1000 吨废机油。
+  specs_note_en: Below 20 t/d actual footprint stays under 200 m²; one tonne of catalyst treats 800–1000 t of waste oil.
+  highlights:
+    - {cn: 减压精馏, cn2: 沸点降低、停留时间缩短，油色清亮、硫含量低, en: Vacuum distillation, cn2_en: "Lower boiling points and shorter residence time — brighter oil, lower sulphur"}
+    - {cn: 无水排放, cn2: 无工艺污水，冷却水循环使用；废气经喷枪进加热炉烧掉, en: No process wastewater, cn2_en: No process wastewater; cooling water recirculated; off-gas burnt in the furnace}
+    - {cn: 立体安装, cn2: 进料与出渣靠自身真空压差，不另配动力, en: Gravity/vacuum feed, cn2_en: Feed and discharge by vacuum differential — no extra pumps}
+    - {cn: 成品可直接销, cn2: 柴油组分 60%–65% + 轻油 5%–10% + 重油 15%–20%, en: Directly sellable fractions, cn2_en: Diesel fraction 60–65% + light oil 5–10% + heavy oil 15–20%}
+  photos:
+    - {img: dist-site.jpg, cn: 海外蒸馏现场（马来西亚）, en: Distillation site abroad (Malaysia)}
+    - {img: oil-pour.jpg, cn: 出油取样, en: Product sampling}
+  foot: 制造 35–40 天 · 常压 / 减压可选 · 质保 12 个月
+  foot_en: 35–40 days fabrication · atmospheric or vacuum · 12-month warranty
+
+carbonization:
+  num: "10"
+  kicker: 生物质炭化
+  kicker_en: BIOMASS CARBONIZATION
+  lead: 气炭联产，自产可燃气回供，连续跑 7–10 天不停炉。
+  lead_en: Gas-and-char co-generation, self-fuelled, running 7–10 days without a stop.
+  image: r-carbon.jpg
+  intro: 稻壳、秸秆、锯末、木片、椰壳、棕榈壳等破碎至 ≤20 mm、含水 ≤15% 后连续进料。热风炉间接加热筒体到 300–350 °C，物料裂解产烟；烟气进约 900 °C 高温燃烧炉转热，冷却绞龙把炭降到常温直接包装。正常运行所需热能约 1/3 自用，2/3 可供烘干。
+  intro_en: Rice husk, straw, sawdust, wood chips, coconut or palm shell are crushed to ≤20 mm and dried to ≤15% moisture, then fed continuously. A hot-air furnace heats the shell indirectly to 300–350 °C; the volatiles burn in a ~900 °C chamber and the heat is recovered, while cooling screws bring char to ambient for bagging. About one third of the heat runs the line; two thirds can dry feedstock.
+  specs_head: [机型, 原料处理量, 主炉规格, 加热方式, 占地, 人工, 适用原料]
+  specs_head_en: [Model, Feed rate, Reactor, Heating, Footprint, Crew, Feedstock]
+  specs:
+    - ["DY-T-1", "1 t/h", "Φ1300 × 14000", "间接加热（热风炉）", "38 × 10 × 8 m", "1–2 人/班", "稻壳 / 秸秆 / 锯末"]
+    - ["DY-T-2", "2 t/h", "Φ1600 × 14000", "间接加热（热风炉）", "38 × 10 × 8 m", "1–2 人/班", "木片 / 椰壳 / 棕榈壳"]
+    - ["DY-T-3", "3 t/h", "Φ1800 × 14000", "间接加热（热风炉）", "38 × 10 × 8 m", "1–2 人/班", "木片 / 竹 / 玉米芯"]
+  specs_en:
+    - ["DY-T-1", "1 t/h", "Φ1300 × 14000", "Indirect (hot-air furnace)", "38 × 10 × 8 m", "1–2 per shift", "Rice husk / straw / sawdust"]
+    - ["DY-T-2", "2 t/h", "Φ1600 × 14000", "Indirect (hot-air furnace)", "38 × 10 × 8 m", "1–2 per shift", "Wood chips / coconut / palm shell"]
+    - ["DY-T-3", "3 t/h", "Φ1800 × 14000", "Indirect (hot-air furnace)", "38 × 10 × 8 m", "1–2 per shift", "Wood chips / bamboo / corn cob"]
+  specs_note: 木片整线按日产炭 20 吨定制：Φ2000 × 20000 主炉（304 不锈钢 16 mm）+ Φ2400 × 18000 烘干机，总功率 156.5 kW，整场约 9000 ㎡。
+  specs_note_en: A 20 t/day wood-chip line is custom built — Φ2000 × 20000 reactor (304 SS, 16 mm) plus Φ2400 × 18000 dryer, 156.5 kW total, about 9000 m² site.
+  highlights:
+    - {cn: 连续 24 小时, cn2: 连续进出料，可连续生产 7–10 天, en: 24-hour operation, cn2_en: "Continuous in and out, 7–10 days without a stop"}
+    - {cn: 燃料自给, cn2: 稳定后靠自产可燃气，一般无需外购燃料, en: Self-fuelled, cn2_en: "Once stable, self-produced gas covers the heat demand — no bought fuel"}
+    - {cn: 间接加热, cn2: 单一热风炉热辐射，炉体损伤小、单点控温, en: Indirect heating, cn2_en: "Single hot-air furnace, radiant heat — less shell damage, one-point temperature control"}
+    - {cn: 余热烘干, cn2: 炭化烟气余热去烘干，1/3 自用、2/3 供热, en: Waste-heat drying, cn2_en: "Flue-gas waste heat dries feedstock — one third self-use, two thirds to the dryer"}
+  photos:
+    - {img: charcoal-bags.jpg, cn: 成品炭包装出厂, en: Bagged char leaving the plant}
+    - {img: samples-jars.jpg, cn: 炭 / 颗粒样品, en: Char and pellet samples}
+  foot: 按原料与产能定制 · 现场安装调试 · 质保 12 个月
+  foot_en: Custom-built to feedstock and capacity · on-site commissioning · 12-month warranty
+
+feedstock:
+  kicker: 适用原料
+  kicker_en: AVAILABLE FEEDSTOCK
+  lead: 一条工艺线，能吃的原料远不止一种。
+  lead_en: One process platform, a much wider feedstock window.
+  groups:
+    - {cn: 废轮胎与橡胶, en: Waste tyres & rubber, items: [整胎（切圈口后）, 轮胎胶粉, 破碎胶块, 废橡胶制品, 输送带], items_en: [Whole tyres (bead cut), Tyre crumb, Shredded chips, Rubber products, Conveyor belt]}
+    - {cn: 废塑料, en: Waste plastics, items: [生活塑料, 农膜 / 包装膜, 压缩料包, 铝塑（药用 / 光伏背板）, 造纸厂废塑料], items_en: [Mixed household, Film / packaging, Baled feedstock, Alu-plastic (pharma, PV backsheet), Paper-mill rejects]}
+    - {cn: 废油, en: Waste oil, items: [废机油, 轮胎油, 塑料油, 液压油 / 导热油, 变压器油, 渣油 / 舱底油], items_en: [Waste lube oil, Tyre oil, Plastic oil, Hydraulic / heat-transfer oil, Transformer oil, Sludge / bilge oil]}
+    - {cn: 其他, en: Others, items: [油泥, 油漆渣, 风电叶片, 电路板 / 电容, 医疗废物（按当地法规）], items_en: [Oil sludge, Paint residue, Wind-turbine blades, PCB / capacitors, Medical waste (per local rules)]}
+    - {cn: 生物质, en: Biomass, items: [稻壳, 秸秆, 锯末, 木片, 椰壳 / 棕榈壳, 玉米芯 / 竹], items_en: [Rice husk, Straw, Sawdust, Wood chips, Coconut / palm shell, Corn cob / bamboo]}
+  photos:
+    - {img: tire-chips.jpg, cn: 破碎轮胎胶块与钢丝, en: Shredded tyre chips with wire}
+    - {img: feed-plastic.jpg, cn: 压缩打包的废塑料原料, en: Baled waste plastics}
+    - {img: feed-pile.jpg, cn: 棚下破碎料堆场, en: Shredded feedstock under shed}
+  specs_head: 进料要求
+  specs_head_en: FEED REQUIREMENTS
+  specs:
+    - {k: 整胎进料, v: "全尺寸整胎，只需切圈口（无需切块、磨粉）", k_en: Whole tyres, v_en: "Any tyre size; bead cut only, no shredding or grinding"}
+    - {k: 破碎料, v: "≤20 mm（建议 2–3 cm）", k_en: Shredded feed, v_en: "≤20 mm (2–3 cm recommended)"}
+    - {k: 含水率, v: "≤15%（生物质），废油无要求", k_en: Moisture, v_en: "≤15% for biomass; no limit for waste oil"}
+    - {k: 预处理配套, v: "切圈口（间歇式必做，一道工序）· 撕碎 · 破胶 · 磁选 · 烘干 · 压块（其余为连续式或料型需要）", k_en: Pre-treatment, v_en: "Bead cut (one step, always needed on batch lines) · shredding · rubber breaking · magnet · drying · briquetting (continuous lines or per feedstock)"}
+  note: 不同原料对应不同主机与预处理配置（破碎、磁选、烘干、压块）。请提供样品或化验单，工程师给出选型方案与处理量测算，不额外收费。
+  note_en: Each feedstock maps to a different reactor and pre-treatment train — crushing, magnetic separation, drying, briquetting. Send a sample or an assay sheet and our engineers will size the plant free of charge.
+
+outputs:
+  kicker: 产物与应用
+  kicker_en: OUTPUTS & APPLICATIONS
+  lead: 一吨废轮胎，四份可卖的产出。
+  lead_en: One tonne of waste tyres, four sellable outputs.
+  yield_head: [产物, 参考比例（废轮胎）, 用途]
+  yield_head_en: [Output, Reference share (tyres), Application]
+  yields:
+    - ["裂解油", "约 45%", "锅炉 / 窑炉燃料油；再蒸馏精制成柴油类工业燃料组分"]
+    - ["炭渣 / 回收炭黑", "约 38%", "掺煤或生物质燃烧；炼钢增碳剂；深加工为再生炭黑 rCB"]
+    - ["回收钢丝", "视轮胎类型", "抓机掏出，送钢铁厂或金属回收；除胶压块后提高售价"]
+    - ["不凝气", "约 9%", "回收后作后续批次釜底加热燃料，大幅降低外部燃料需求；多余进安全燃烧系统"]
+  yields_en:
+    - ["Pyrolysis oil", "≈45%", "Boiler / kiln fuel oil; distilled into diesel-range industrial fuel"]
+    - ["Carbon residue / rCB", "≈38%", "Co-firing; steelmaking recarburiser; upgraded to recovered carbon black for rubber"]
+    - ["Recovered steel wire", "Tyre dependent", "Lifted out by grab, sold to steel mills or metal recyclers; baled after de-rubbering"]
+    - ["Non-condensable gas", "≈9%", "Recovered and fired under the drum to heat later batches, cutting external fuel demand sharply"]
+  distill_note: 蒸馏线：柴油组分 60%–65% + 轻油 5%–10% + 重油 15%–20% + 废气 3%–5%，柴油出油率合计 75%–90%。
+  distill_note_en: "Distillation line — diesel fraction 60–65% + light oil 5–10% + heavy oil 15–20% + off-gas 3–5%, i.e. 75–90% diesel-range yield."
+  test_head: 第三方实测 · 轮胎裂解油
+  test_head_en: Third-party test · tyre pyrolysis oil
+  test:
+    - {v: "10,392", u: Cal/g, k: 热值, k_en: Calorific value}
+    - {v: "0.85", u: "%", k: 硫含量, k_en: Sulphur}
+    - {v: "0.59", u: "%", k: 残炭, k_en: Carbon residue}
+    - {v: "74", u: °C, k: 初馏点, k_en: Initial boiling point}
+  test_src: 临淄美高油品技术服务中心（2026-09-07 收样）· 未精制裂解油，精制后指标另计
+  test_src_en: Tested by Meigao Oil Technical Service Centre (sample received 2026-09-07); raw pyrolysis oil, refining improves specs
+  photos:
+    - {img: carbon-black.jpg, cn: 螺旋出炭黑, en: Carbon black discharge}
+    - {img: oil-pour.jpg, cn: 成品油取样, en: Finished oil sampling}
+    - {img: samples-jars.jpg, cn: 炭 / 颗粒样品, en: Char and pellet samples}
+  char_head: 轮胎裂解炭黑 · 验收指标（标准值，非实测）
+  char_head_en: TYRE PYROLYSIS CARBON BLACK — ACCEPTANCE SPEC
+  char:
+    - {v: "75±7", u: cm³/100g, k: DBP 吸收值, k_en: DBP absorption}
+    - {v: "≤20", u: "%", k: 灰分（825°C）, k_en: Ash (825 °C)}
+    - {v: "≥20", u: MPa, k: 拉伸强度, k_en: Tensile strength}
+    - {v: "≤1000", u: ppm, k: 45μm 筛余物, k_en: 45 μm sieve residue}
+  disclaimer: 产出比例随原料含水率、温度曲线、终点判定与称重方法变化，上表为参考值。
+  disclaimer_en: Output shares vary with moisture, temperature curve, end-point and weighing method; figures above are references.
+
+io:
+  kicker: 投入与产出
+  kicker_en: INPUTS & OUTPUTS
+  lead: 客户真正要问的是三件事：我备什么、厂里交到哪一步、一批料进多少出多少。
+  lead_en: Three questions decide the deal — what you prepare, how far we deliver, what a batch takes in and gives back.
+  client_head: 客户准备
+  client_head_en: CLIENT PROVIDES
+  client:
+    - {cn: 场地, en: Site, cn2: 硬化地面与排水，留出进料、出渣与储罐位置（20 t/d 以下 <200 ㎡）, en2: "Hardstand with drainage; room for feed, discharge and tanks (under 200 m² below 20 t/d)"}
+    - {cn: 电力, en: Power, cn2: 按机型装机功率接入，建议独立配电柜与应急电, en2: "Mains to the line's installed load; dedicated panel and backup power recommended"}
+    - {cn: 冷却水, en: Cooling water, cn2: 循环水池与补水，蒸发与排污补水量按当地气候, en2: "Circulation pit plus make-up for evaporation and blowdown, sized to local climate"}
+    - {cn: 原料, en: Feedstock, cn2: 轮胎去圈口、塑料破碎至 ≤120 mm，含水率 <15%，长期供应量先锁定, en2: "Tyres debenated, plastics shredded to ≤120 mm, moisture under 15%, long-term supply secured"}
+    - {cn: 人工, en: Operators, cn2: 间歇线约 3 人/班，连续线 1–2 人/班，可从本地招聘后培训, en2: "About 3 per shift on batch lines, 1–2 on continuous; trained from local hires"}
+    - {cn: 手续, en: Permits, cn2: 环评、用地、危废处理与产品外销资质；XG 提供工艺资料与申报协助, en2: "EIA, land use, waste handling and offtake licences; XG supplies process data and filing support"}
+  delivery_head: 我们的交付
+  delivery_head_en: WHAT XG DELIVERS
+  delivery:
+    - {cn: 设计, en: Design, cn2: 工艺计算、总图与三维布置、设备图纸与选型, en2: "Process calculation, general layout, 3D arrangement, equipment drawings and selection"}
+    - {cn: 制造, en: Fabrication, cn2: 下料、卷板、焊接、机加工、装配、试机全部在自有厂区, en2: "Cutting, rolling, welding, machining, assembly and test run on our own floor"}
+    - {cn: 安装, en: Installation, cn2: 现场安装、管道与电缆敷设、保温防腐, en2: "On-site erection, piping and cabling, insulation and coating"}
+    - {cn: 调试, en: Commissioning, cn2: 冷态试车到首次出油，温度曲线与操作规程一并移交, en2: "Cold commissioning through to first oil; temperature curve and SOP handed over"}
+    - {cn: 培训, en: Training, cn2: 操作、巡检、安全联锁与常见故障处理, en2: "Operation, inspection rounds, safety interlocks and fault handling"}
+    - {cn: 售后, en: Service, cn2: 备件供应、油品送检与买家对接、远程诊断, en2: "Spares, oil testing, offtake introductions and remote diagnostics"}
+  inputs_head: 一批料的投入
+  inputs_head_en: WHAT A BATCH TAKES
+  inputs_unit: 以 10 TPD 间歇式线每批 10 t 轮胎为例
+  inputs_unit_en: Per 10 t tyre batch on a 10 TPD batch line
+  inputs:
+    - {v: "360", u: kWh, k: 整线日用电, k_en: "Electricity, line per day"}
+    - {v: "2", u: m³, k: 冷却水补水, k_en: Cooling-water make-up}
+    - {v: "3", u: 人/班, u_en: per shift, k: 操作人工, k_en: Operators}
+    - {v: "400", u: m³, k: 开车天然气，稳定后自产气供后续批次, k_en: "Start-up gas; off-gas heats later batches once stable"}
+  outputs_head: 一批料的产出
+  outputs_head_en: WHAT A BATCH GIVES
+  facts:
+    - {v: "≈4.5", u: t, k: 裂解油, k_en: Pyrolysis oil}
+    - {v: "≈3.8", u: t, k: 炭渣 / 回收炭黑, k_en: "Char / recovered carbon black"}
+    - {v: 视类型, v_en: "Tyre", u: "", k: 回收钢丝, k_en: "Recovered steel wire, tyre dependent"}
+    - {v: "≈0.9", u: t, k: 不凝气，回收供后续批次, k_en: "Non-condensable gas, back to the burner"}
+  annual_head: 折成一年
+  annual_head_en: OVER A YEAR
+  annual:
+    - {v: "3,000", u: t/年, u_en: t/yr, k: 入厂原料（10 t/d × 300 天）, k_en: "Feedstock in (10 t/d × 300 days)"}
+    - {v: "≈1,350", u: t/年, u_en: t/yr, k: 裂解油, k_en: Pyrolysis oil}
+    - {v: "≈1,140", u: t/年, k: 炭渣 / 回收炭黑, k_en: Char / recovered carbon black}
+    - {v: "300", u: 天, u_en: days, k: 年运行天数，检修与雨季另计, k_en: "Operating days; maintenance excluded"}
+  note: 投入为 10 TPD 间歇式线的运行口径，随原料、含水率、气候与终点判定浮动；钢丝视轮胎类型另计，故四项产出合计不等于 10 t。设备投资、运行成本与回本期随各国电价、油价与人工差异极大，按项目单独测算，不在本册列明。
+  note_en: Inputs describe a 10 TPD batch line and vary with feedstock, moisture, climate and end-point; steel wire depends on tyre type, so the four outputs need not sum to 10 t. Equipment cost, running cost and payback differ widely by country, so they are calculated per project and not listed in this brochure.
+
+process:
+  kicker: 工艺流程与安全
+  kicker_en: PROCESS & SAFETY
+  lead: 密闭、无氧、微负压——安全靠结构，不靠人盯。
+  lead_en: Sealed, oxygen-free, slightly negative — safety designed in, not watched in.
+  image: process.jpg
+  steps_head: 连续式七步
+  steps_head_en: Continuous line — seven steps
+  steps:
+    - {num: "01", cn: 氮气置换, cn2: 制氮机把反应釜内氧气置换出去, en: Nitrogen purge, cn2_en: Nitrogen generator purges oxygen out of the reactor}
+    - {num: "02", cn: 升温, cn2: 燃油或不凝气加热，2–5 h 升至约 400 °C, en: Heat-up, cn2_en: "Oil or off-gas firing, 2–5 h ramp to about 400 °C"}
+    - {num: "03", cn: 无氧进料, cn2: 自动上料器连续进料，密封进料段, en: Sealed feeding, cn2_en: "Automatic feeder, sealed feed section"}
+    - {num: "04", cn: 热解分离, cn2: 喷淋气包 → 沉降罐去重油 → 冷凝成燃料油, en: Separation, cn2_en: Spray header → settling tank drops heavy oil → condensers make fuel oil}
+    - {num: "05", cn: 不凝气回用, cn2: 两道水封 + 阻火器进热风炉，为后续批次供热, en: Off-gas reuse, cn2_en: Two water seals plus flame arrestor into the hot-air furnace, heating later batches}
+    - {num: "06", cn: 烟气净化, cn2: 二级喷淋脱硫除尘 → 引风机 → 烟囱, en: Flue-gas cleaning, cn2_en: Two-stage spray scrubbing → induced-draft fan → stack}
+    - {num: "07", cn: 密封出渣, cn2: 全自动出渣，过程无泄漏, en: Sealed discharge, cn2_en: "Fully automatic sealed discharge, no leakage"}
+  batch_head: 间歇式单批节拍
+  batch_head_en: Batch cycle
+  batch:
+    - {k: 升温与裂解, v: "9 h", k_en: Heat-up & pyrolysis}
+    - {k: 停火与冷却, v: "9 h", k_en: Burner off & cooling}
+    - {k: 出渣清理, v: "2 h", k_en: Discharge and cleaning}
+    - {k: 完整批次, v: "20 h", k_en: Full batch}
+  safety_head: 关键控制点
+  safety_head_en: Control points
+  safety:
+    - {k: 空气进入油气系统, v: 密封 + 微负压 + 气密检查 + 氮气接口, k_en: Air ingress, v_en: Seals + slight negative pressure + leak test + nitrogen connection}
+    - {k: 不凝气回火, v: 水封 + 阻火器 + 止回阀 + 顺序联锁, k_en: Off-gas flashback, v_en: Water seal + flame arrestor + check valve + interlock}
+    - {k: 系统超压, v: 压力监测 + 声光报警 + 安全泄放 + 紧急停火, k_en: Overpressure, v_en: Pressure monitoring + alarm + relief + emergency shut-off}
+    - {k: 冷却水中断, v: 流量与泵状态报警 + 安全停机逻辑, k_en: Cooling water loss, v_en: Flow and pump-status alarm + safe shutdown logic}
+    - {k: 残渣自燃, v: 充分冷却 + 开门温度限制 + 密闭输送, k_en: Residue self-ignition, v_en: Full cooling + door temperature limit + sealed conveying}
+    - {k: 停电 / 风机故障, v: 燃料切断 + 安全阀位 + 应急电源, k_en: Power / fan failure, v_en: Fuel cut-off + safe valve position + emergency power}
+  disclaimer: 排放承诺按项目地标准执行：配脱硫除尘（可选脱硝）可达标，不做「天生达标」的承诺。
+  disclaimer_en: Emission guarantees follow local standards — we commit to meeting limits with desulphurization and dedusting (DeNOx optional), never to "inherently compliant".
+
+cases:
+  kicker: 客户与现场
+  kicker_en: CLIENTS & SITES
+  lead: 30 多个国家，同一套交付标准。
+  lead_en: 30+ countries, one delivery standard.
+  stats:
+    - {num: "30", unit: "+", unit_en: "+", cn: 出口国家, en: Countries}
+    - {num: "70", unit: "+", unit_en: "+", cn: 客户定制方案, en: Custom proposals}
+    - {num: "5", unit: 大洲, unit_en: "", cn: 亚 / 非 / 欧 / 南美 / 中东, en: Continents}
+    - {num: "45", unit: t/d, unit_en: t/d, cn: 单机最大吨位, en: Largest single unit}
+  table_head: [国家, 项目, 机型 / 吨位, 原料]
+  table_head_en: [Country, Project, Line / capacity, Feedstock]
+  table:
+    - ["斯里兰卡", "Ecolux Bio Harvest", "间歇式 15 / 50 TPD", "废塑料"]
+    - ["墨西哥", "Cxx", "间歇式 15 TPD", "废轮胎"]
+    - ["波兰", "政府项目", "连续式 40 TPD", "粪浆 / 污泥"]
+    - ["摩洛哥", "Mohammed Elsoffi", "间歇式 45 TPD", "轮胎 + 塑料"]
+    - ["伊朗", "Dr. Vahab Nevayi", "间歇式 20 TPD", "废轮胎"]
+    - ["越南", "Zana / David", "撬装 2×1 TPD + 蒸馏 1 TPD", "轮胎油"]
+    - ["埃及", "George", "间歇式 1 & 5 TPD", "废轮胎"]
+    - ["土耳其", "Fevzi / Kqamar", "间歇式 10–60 TPD", "轮胎 / 塑料"]
+    - ["秘鲁", "Peru Bioquimicos", "间歇式 2 / 10 TPD", "废塑料"]
+    - ["阿富汗", "SCRC / Said Asimi", "间歇式 10–20 TPD", "废轮胎"]
+    - ["巴基斯坦", "Farooq", "间歇式 2 / 5 TPD", "废轮胎"]
+    - ["中国", "福建 / 河南项目", "间歇式 15 TPD ×4 套", "塑料 / 轮胎"]
+  table_en:
+    - ["Sri Lanka", "Ecolux Bio Harvest", "Batch 15 / 50 TPD", "Waste plastics"]
+    - ["Mexico", "Cxx", "Batch 15 TPD", "Waste tyres"]
+    - ["Poland", "Government project", "Continuous 40 TPD", "Slurry / sewage sludge"]
+    - ["Morocco", "Mohammed Elsoffi", "Batch 45 TPD", "Tyres + plastics"]
+    - ["Iran", "Dr. Vahab Nevayi", "Batch 20 TPD", "Waste tyres"]
+    - ["Vietnam", "Zana / David", "Skid 2×1 TPD + dist. 1 TPD", "Tyre oil"]
+    - ["Egypt", "George", "Batch 1 & 5 TPD", "Waste tyres"]
+    - ["Turkey", "Fevzi / Kqamar", "Batch 10–60 TPD", "Tyres / plastics"]
+    - ["Peru", "Peru Bioquimicos", "Batch 2 / 10 TPD", "Waste plastics"]
+    - ["Afghanistan", "SCRC / Said Asimi", "Batch 10–20 TPD", "Waste tyres"]
+    - ["Pakistan", "Farooq", "Batch 2 / 5 TPD", "Waste tyres"]
+    - ["China", "Fujian / Henan projects", "Batch 15 TPD ×4 sets", "Plastics / tyres"]
+  photos:
+    - {img: dist-site.jpg, cn: 马来西亚蒸馏现场, en: Distillation site in Malaysia}
+    - {img: continuous-line.jpg, cn: 国内连续式产线, en: Continuous line at home}
+  note: 客户名称已做脱敏处理；现场照片与方案原件可到厂查阅。
+  note_en: Client names partly anonymised; site photos and proposal originals available for review at our factory.
+
+service:
+  kicker: 服务与交付
+  kicker_en: SERVICE & DELIVERY
+  lead: 卖设备，也负责让它出油。
+  lead_en: We sell the plant — and we stay until it makes oil.
+  items:
+    - {num: "01", cn: 选型与测算, cn2: 按原料与目标产能给出机型、占地与投入产出测算, en: Selection & sizing, cn2_en: "Match reactor, footprint and cost model to your feedstock and target output"}
+    - {num: "02", cn: 场地规划, cn2: 平面布置、基础与管线图，配合环评手续, en: Site planning, cn2_en: "Layout, foundation and piping drawings; support for EIA paperwork"}
+    - {num: "03", cn: 制造与验收, cn2: 客户可到厂监造，试机记录与随机文件齐全, en: Build & inspection, cn2_en: Client supervision welcome; test records and shipping documents complete}
+    - {num: "04", cn: 安装调试, cn2: 安装队进场，对中找正、管线电气、联动调试, en: Installation, cn2_en: "Crew on site for alignment, piping, electrical and interlock commissioning"}
+    - {num: "05", cn: 人员培训, cn2: 操作、点检、安全与异常处理，试运行期间驻场, en: Training, cn2_en: "Operation, inspection, safety and fault handling; resident during trial run"}
+    - {num: "06", cn: 质保备件, cn2: 间歇式整机 12 个月、连续式 3 年，易损件常备, en: Warranty & spares, cn2_en: "12 months for batch plants, 3 years for continuous; wear parts in stock"}
+    - {num: "07", cn: 出油与销路, cn2: 首批出油指标确认，对接油品与炭黑的销售渠道, en: First oil & offtake, cn2_en: First-oil assay confirmed; introduction to oil and carbon black buyers}
+    - {num: "08", cn: 终身支持, cn2: 远程诊断 + 定期回访 + 终身免费检测维护, en: Lifetime support, cn2_en: Remote diagnosis + scheduled visits + lifetime free inspection}
+  timeline_head: 典型交期（间歇式）
+  timeline_head_en: Typical lead time (batch plant)
+  timeline:
+    - {d: "7 天", d_en: "7 days", cn: 技术确认, en: Technical confirmation}
+    - {d: "7 天", d_en: "7 days", cn: 深化设计, en: Detailed design}
+    - {d: "35 工作日", d_en: "35 workdays", cn: 制造与发运, en: Fabrication & dispatch}
+    - {d: "20 天", d_en: "20 days", cn: 现场安装, en: Site installation}
+    - {d: "3 天", d_en: "3 days", cn: 试运行与培训, en: Trial run & training}
+  note: 连续式约 70 个工作日交货；海外项目含海运与清关，按目的港单独排期。
+  note_en: Continuous lines ship in about 70 working days; overseas projects are scheduled per destination port including sea freight and clearance.
+
+contact:
+  kicker: 联系我们
+  kicker_en: CONTACT
+  title: 来厂看设备，比看画册更直接。
+  title_en: Come and see the plant — better than any brochure.
+  address: 河南省商丘市虞城县高新区筑润路西段
+  address_en: Yucheng High-tech Zone, Shangqiu, Henan, China
+  factory: 河南生产基地 · 厂区 50 亩 · 车间、试机位与展厅开放参观
+  factory_en: Henan production base · 50-mu site · workshop, test bay and showroom open to visitors
+  people:
+    - {name: Eva Tian, role: 总经理, role_en: General Manager, phone: "+86 185 0309 0942", mail: binaryeva@gmail.com}
+  web: ""
+  web2: ""
+  legal: XG 环保装备 · XG ENVIRONMENTAL EQUIPMENT CO., LTD.
