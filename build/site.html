@@ -97,15 +97,16 @@
     </div>
     <div class="cards">
       {% for it in c.lines['items'] %}
-      <article class="card reveal">
+      {% set pg = line_pages.get(it.num) %}
+      {% if pg %}<a class="card reveal is-link" href="{{ pg }}.html" aria-label="{{ P(it.cn, it.en) }}">{% else %}<article class="card reveal">{% endif %}
         <div class="card-img">{{ img(it.img, '', S(it.cn, it.en)) }}<span class="chip">{{ it.cap }}</span></div>
         <div class="card-body">
           <span class="card-num">{{ it.num }}</span>
           <h3>{{ P(it.cn, it.en) }}</h3>
           <p>{{ P(it.cn2, it.cn2_en) }}</p>
-          {% if line_pages.get(it.num) %}<a class="card-more" href="{{ line_pages[it.num] }}.html">{{ P('参数与项目', 'Specs & projects') }}</a>{% endif %}
+          {% if pg %}<span class="card-more">{{ P('参数与项目', 'Specs & projects') }} →</span>{% endif %}
         </div>
-      </article>
+      {% if pg %}</a>{% else %}</article>{% endif %}
       {% endfor %}
     </div>
     <div class="combos">

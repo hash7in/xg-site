@@ -108,6 +108,40 @@ pages:
           - "Batch pyrolysis covers 1–45 TPD, one charge per batch, about 20 hours. The 45–50% oil yield on the tyre page is for tyres only. Plastic yield depends on the resin and is not given as one number here."
           - "On record: Sri Lanka, Ecolux Bio Harvest, batch 15 / 50 TPD, waste plastics; Peru, Peru Bioquimicos, batch 2 / 10 TPD, waste plastics; China, Fujian / Henan, batch 15 TPD ×4 sets, plastics / tyres."
 
+  - slug: skid-pyrolysis
+    group: line
+    line: "02"
+    img: r-hotskid.jpg
+    title: 撬装式裂解设备
+    title_en: Skid-Mounted Pyrolysis Plant
+    desc: 主炉、冷凝、气路与控制柜装在同一个底座上，1–4 TPD，到场接管即用。适合小规模试产与分布式收集点。
+    desc_en: "Reactor, condenser, gas train and control panel on one base: 1–4 TPD, running on arrival. Built for pilot runs and distributed collection points."
+    kicker: 撬装式
+    kicker_en: SKID-MOUNTED
+    lead: 把一条间歇式裂解线压进一个撬体。先跑通，再按同一套工艺扩产。
+    lead_en: A batch pyrolysis line compressed onto one skid. Prove the flow, then scale on the same process.
+    sections:
+      - h: 这条线做什么
+        h_en: What the skid does
+        p:
+          - 与间歇式同一套工艺：一批一釜，微负压运行，油气不外泄，不凝气回收后作后续批次的釜底加热燃料。差别在集成度——主炉、冷凝、气路与控制柜共用一个底座，现场不做法兰对接，接管即用。
+          - 1 TPD 单套主炉为 Φ1200×2500×14，炉胆 Q345R。整机占地小，可装一个框架柜加一个高柜海运。
+        p_en:
+          - "The same batch process: one charge per batch, slight negative pressure, vapour kept inside, off-gas recovered and fired under the drum for later batches. What changes is integration — reactor, condenser, gas train and control panel share one base, so the site does no flange-up. Connect and run."
+          - "The 1 TPD unit uses a Φ1200×2500×14 reactor with a Q345R shell. It ships as one frame container plus one high-cube."
+      - h: 档位
+        h_en: Capacities
+        p:
+          - 1 / 2 / 4 TPD 三档。3 TPD 撬装轮胎配置占地约 3.0 × 22 m，1 人操作，一个框架柜加一个高柜出运。按原料与批次策略可换釜体，吨位不是单一物理量，报价前要落到主炉规格上。
+        p_en:
+          - "1 / 2 and 4 TPD. The 3 TPD skid for tyres takes about 3.0 × 22 m, one operator, one frame container plus one high-cube. Shell size can be re-matched to feedstock and batch strategy: tonnage alone is not one physical figure, so a quote is pinned to the reactor spec."
+      - h: 常见用法
+        h_en: How it is used
+        p:
+          - 试产与分布式收集点：先在原料集散地上一套 1–4 TPD 跑通油与炭的销路，再复制或放大。名录中的组合用法是 2×1 TPD 撬装加 1 TPD 蒸馏，原料为轮胎油（越南 Zana / David）。
+        p_en:
+          - "Pilot runs and distributed collection points: run 1–4 TPD where the feedstock is collected, prove where the oil and char go, then replicate or scale. A combination on record is 2×1 TPD skids plus 1 TPD distillation on tyre oil (Vietnam, Zana / David)."
+
   - slug: continuous-pyrolysis
     group: line
     line: "03"
@@ -167,6 +201,44 @@ pages:
         p_en:
           - "Diesel-range yield is 75–90%. A second cut of the same product is diesel fraction 60–65%, light oil 5–10% and heavy oil 15–20%. ZL-1600 is 8–10 t/d (φ1600×6600, Q345R); ZL-2200 is 15–20 t/d (φ1800×7000); ZL-2400 is 20–30 t/d (φ1800×7700, Q345R / 310S). Installed power 16.7–24.2 kW, footprint 200–400 m², crew of 2–3. Below 20 t/d the real footprint can stay under 200 m². One tonne of catalyst treats 800–1000 t of waste oil."
           - "Fabrication is 35–40 days, with a 12-month warranty. On record: Vietnam, Zana / David, skid 2×1 TPD plus 1 TPD distillation, tyre oil. A distillation site photo is from Malaysia."
+
+  - slug: biomass-carbonization
+    group: line
+    line: "05"
+    img: r-carbon.jpg
+    title: 连续式生物质炭化设备
+    title_en: Continuous Biomass Carbonization Plant
+    desc: 稻壳、秸秆、锯末、椰壳、棕榈壳、木片连续炭化，1–3 t/h。气炭联产：自产可燃气回供，1/3 热能自用、2/3 供烘干。
+    desc_en: "Continuous carbonization for rice husk, straw, sawdust, coconut shell, palm kernel shell and wood chips at 1–3 t/h. Gas-and-char co-generation: self-fuelled, one third of the heat runs the line, two thirds dry the feed."
+    kicker: 生物质炭化
+    kicker_en: CARBONIZATION
+    lead: 一条不靠外购燃料的连续线：进料烘干 → 约 350 ℃ 炭化 → 冷却出炭 → 烟气净化。
+    lead_en: A continuous line that buys almost no fuel — dry, carbonize at about 350 °C, cool the char out, clean the flue gas.
+    sections:
+      - h: 四段工艺
+        h_en: Four stages
+        p:
+          - 原料破碎到 ≤20 mm（建议 2–3 cm），烘干到含水 ≤15%。热风炉把炭化炉筒体加热到 300–350 ℃ 起料；木片在 350 ℃ 左右开始裂解产烟，烟气进约 900 ℃ 的高温燃烧炉燃烧转热。
+          - 出炭走 2–3 段冷却绞龙降到常温，不停机直接包装。烟气经列管冷却器降温后进喷淋塔；烘干烟气先沙克龙除尘再进喷淋塔。
+        p_en:
+          - "Feed is crushed to ≤20 mm (2–3 cm preferred) and dried to ≤15% moisture. A hot-air furnace heats the retort shell to 300–350 °C; wood chips start to pyrolyse and smoke at about 350 °C, and that gas burns in a combustion chamber at roughly 900 °C, returning heat to the shell."
+          - "Char leaves through two or three cooling screws down to ambient and is bagged without stopping the line. Flue gas is cooled in a shell-and-tube exchanger before the spray tower; drying gas is cyclone-separated first."
+      - h: 档位
+        h_en: Capacities
+        p:
+          - DY-T-1 / DY-T-2 / DY-T-3 对应 1 / 2 / 3 吨每小时，炉体 Φ1300 / 1600 / 1800 × 14000。占地约 38 × 10 m（含 8 m 高度），1–2 人/班次。
+          - 日产炭 20 吨的木片线按项目定做：炉体 Φ2000×20000，304 材质 16 mm，保温加热区 12 m，配 Φ2400×18000 烘干机，整场约 9000 ㎡，总装机 156.5 kW。
+        p_en:
+          - "DY-T-1 / DY-T-2 / DY-T-3 cover 1 / 2 / 3 t per hour with Φ1300 / 1600 / 1800 × 14000 retorts. Footprint about 38 × 10 m including 8 m headroom, one to two operators per shift."
+          - "The 20 t/day wood-chip line is built per project: Φ2000×20000 retort in 304 at 16 mm, 12 m heated zone, Φ2400×18000 dryer, a site of about 9,000 m² and 156.5 kW installed."
+      - h: 产出与热能
+        h_en: Output and heat balance
+        p:
+          - 产出固体炭、木醋液、焦油与可燃气。稳定运行后靠自产可燃气，一般不外购燃料，不足时补外部燃料；正常运行所需热能约 1/3 自用，其余 2/3 可供烘干机。连续进出料可跑 7–10 天再停。
+          - 可处理的原料：稻壳、秸秆、锯末、木屑、树皮、椰壳、玉米芯、竹子、棕榈壳、木片。
+        p_en:
+          - "Outputs are solid char, wood vinegar, tar and combustible gas. Once stable the line runs on its own gas and normally buys no fuel, topping up only when short. About one third of the heat runs the line; the other two thirds can dry the feed. Continuous operation runs 7–10 days between stops."
+          - "Feedstocks: rice husk, straw, sawdust, wood shavings, bark, coconut shell, corn cob, bamboo, palm kernel shell and wood chips."
 
   - slug: pyrolysis-oil-yield
     group: tech
