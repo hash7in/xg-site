@@ -554,14 +554,18 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
 .idx-art .idx-bar { margin-bottom: 0; }
 .idx-rows { border-top: 1px solid var(--line); }
 .idx-row {
-  display: grid; grid-template-columns: 44px minmax(0, 1fr) 24px; gap: 22px;
-  align-items: start; padding: 24px 0 24px 7px; border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 40px 180px minmax(0, 1fr) 24px; gap: 24px;
+  align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line);
   transition: background .2s;
 }
+.idx-row-f { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: var(--tint); }
+.idx-row-f img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.3,1); }
+.idx-row:hover .idx-row-f img { transform: scale(1.045); }
 .idx-row:hover { background: var(--tint); }
 .idx-row-n { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; color: var(--green); padding-top: 3px; }
-.idx-row-t h3 { margin-top: 6px; font-size: 18px; }
+.idx-row-t h3 { margin-top: 6px; font-size: 19px; }
 .idx-row-t p { margin-top: 7px; font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 76ch; }
+.idx-more { margin-top: 26px; font-family: var(--mono); font-size: 11px; line-height: 1.9; letter-spacing: .06em; color: var(--muted); max-width: 70ch; }
 .idx-row .idx-go { align-self: center; font-size: 16px; color: var(--green); transition: transform .25s; }
 .idx-row:hover .idx-go { transform: translate(3px, -3px); }
 .idx-foot { margin-top: 72px; padding: 64px 0; background: var(--tint); border-top: 1px solid var(--line); }
@@ -575,6 +579,8 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
 .nav a.is-on::after { transform: scaleX(1); }
 
 @media (max-width: 1000px) {
+  .idx-row { grid-template-columns: 34px 132px minmax(0, 1fr); gap: 16px; }
+  .idx-row .idx-go { display: none; }
   .idx-foot-in { grid-template-columns: 1fr; gap: 32px; }
   .idx-cta { padding-left: 0; padding-top: 28px; border-left: 0; border-top: 1px solid var(--line); }
   .idx-bar { flex-direction: column; gap: 8px; }

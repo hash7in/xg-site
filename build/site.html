@@ -42,7 +42,7 @@
       <a href="#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
       <a href="#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
       <a href="#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
-      <a href="{{ idx_href }}"><em>06</em>{{ P('资源', 'Notes') }}</a>
+      <a href="{{ idx_href }}"><em>06</em>{{ P('文章', 'Articles') }}</a>
       <a href="#contact"><em>07</em>{{ P('联系', 'Contact') }}</a>
     </nav>
     <div class="hd-r">
@@ -311,28 +311,29 @@
   </div>
 </section>
 
-{# ── 06 资源（技术页索引）────────────────────────────────── #}
-<section class="sec sec-alt" id="resources">
+{# ── 06 技术文章（持续更新，最新在前）──────────────────── #}
+<section class="sec sec-alt" id="articles">
   <div class="wrap">
     <div class="sec-h">
-      <p class="kicker"><em>06</em>{{ P('资源', 'Notes') }}</p>
+      <p class="kicker"><em>06</em>{{ P(idx.kicker, idx.kicker_en) }}</p>
       <h2>{{ P(idx.title, idx.title_en) }}</h2>
       <p class="lead">{{ P(idx.lead, idx.lead_en) }}</p>
     </div>
-    <div class="cards">
-      {% for g in guides[:3] %}
-      <a class="card reveal" href="{{ g.href }}">
-        <div class="card-img">{{ img(g.img, '', P(g.title, g.title_en)) }}<span class="chip">{{ P(g.kicker, g.kicker_en) }}</span></div>
-        <div class="card-body">
-          <span class="card-num">{{ g.n }}</span>
+    <div class="idx-rows">
+      {% for g in articles[:4] %}
+      <a class="idx-row" href="{{ g.href }}">
+        <span class="idx-row-n">{{ g.n }}</span>
+        <figure class="idx-row-f">{{ img(g.img, '', P(g.title, g.title_en)) }}</figure>
+        <div class="idx-row-t">
+          <span class="idx-k">{{ P(g.kicker, g.kicker_en) }}</span>
           <h3>{{ P(g.title, g.title_en) }}</h3>
           <p>{{ P(g.desc, g.desc_en) }}</p>
-          <span class="card-more">{{ P('读这一页', 'Read the note') }} →</span>
         </div>
+        <span class="idx-go" aria-hidden="true">↗</span>
       </a>
       {% endfor %}
     </div>
-    <p class="idx-all"><a class="btn" href="{{ idx_href }}">{{ P('全部 ' ~ guides|length ~ ' 篇技术页与案例', 'All ' ~ guides|length ~ ' notes and references') }}</a></p>
+    <p class="idx-all"><a class="btn" href="{{ idx_href }}">{{ P('全部 ' ~ articles|length ~ ' 篇文章', 'All ' ~ articles|length ~ ' articles') }}</a></p>
   </div>
 </section>
 
@@ -374,7 +375,7 @@
       <span>{{ 'XG ENVIRONMENTAL EQUIPMENT CO., LTD.' if lang == 'zh' else 'XG ENVIRONMENTAL EQUIPMENT CO., LTD.' }}</span>
     </div>
     <div class="ft-links">
-      <a href="{{ idx_href }}">{{ P('资源中心', 'Notes') }}</a>
+      <a href="{{ idx_href }}">{{ P('技术文章', 'Articles') }}</a>
       {% for g in guides %}<a href="{{ g.href }}">{{ P(g.title, g.title_en) }}</a>{% endfor %}
       {% if c.contact.web %}<a href="{{ c.contact.web if c.contact.web.startswith('http') else 'http://' ~ c.contact.web }}">{{ c.contact.web }}</a>{% endif %}
       {% if c.contact.web2 %}<a href="{{ c.contact.web2 if c.contact.web2.startswith('http') else 'http://' ~ c.contact.web2 }}">{{ c.contact.web2 }}</a>{% endif %}

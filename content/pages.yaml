@@ -4,26 +4,22 @@
 
 # 资源中心页头文案
 insights:
-  kicker: 资源中心
-  kicker_en: RESOURCES
-  title: 技术资料与项目案例
-  title_en: Technical Notes & Project References
+  kicker: 技术文章
+  kicker_en: ARTICLES
+  title: 技术文章与项目案例
+  title_en: Technical Articles & Project References
   lead: >
-    五条在售机型各自的结构、档位与交付条件，产出与投入的口径，以及名录里的项目。
-    每页只写能被画册、设备配置表或现场照片对上的一句话，不编数字。
+    出油率与一批料的投入产出怎么算、名录里的项目怎么讲，以及每篇能落到原文的口径说明。
+    这一栏持续更新；产品线的参数与交付条件在产品页上，不在这里。
   lead_en: >
-    Structure, capacity and delivery terms for the five lines we build; how output and input
-    are stated; and the projects on record. Every page carries only what the brochure, the
-    equipment schedule or a site photo can back up. No invented numbers.
-  prod_head: 产品与设备线
-  prod_head_en: Equipment & lines
-  prod_desc: 五条在售机型，加上废塑料这一种原料单独的选型页。
-  prod_desc_en: The five lines we build, plus a separate page for plastics as a feedstock.
-  article_head: 技术文章与项目案例
-  article_head_en: Notes & references
-  article_desc: 出油率与一批料的产出怎么算，以及名录里的项目。
-  article_desc_en: How yield and one batch of output are stated, and the projects on record.
-  note_head: 这些页面怎么写的
+    How yield and one batch of output are stated, how a project on the list is written up,
+    and what each figure is pinned to. This section keeps growing; line specs and delivery
+    terms live on the product pages, not here.
+  article_head: 全部文章
+  article_head_en: All articles
+  article_desc: 按时间倒序，新写的排在最前。
+  article_desc_en: Newest first.
+  note_head: 这些文章怎么写
   note_head_en: How these pages are written
   note: >
     产能、收率、交货期与名录只取自设备配置表与画册；没有实测数据的地方写明「按项目测算」，

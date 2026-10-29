@@ -168,8 +168,10 @@ def main() -> int:
             for g in group_meta.values()
         ]
         groups = [g for g in groups if g["pages"]]
-        products = [x for g in groups if g["key"] == "line" for x in g["pages"]]
-        articles = [x for g in groups if g["key"] != "line" for x in g["pages"]]
+        # 资源中心只放文章：产品页走首页产品矩阵，不在这里重复
+        articles = [x for g in groups if g["key"] != "line" for x in g["pages"]][::-1]
+        for i, a in enumerate(articles):
+            a["n"] = f"{i + 1:02d}"
         idx_href = "insights.html"
         out = WEB / META[lang]["out"]
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -182,6 +184,7 @@ def main() -> int:
                 dims=dims,
                 root=root,
                 guides=guides,
+                articles=articles,
                 line_pages=line_pages,
                 idx=insight_copy,
                 idx_href=idx_href,
@@ -203,7 +206,6 @@ def main() -> int:
                 dims=dims,
                 root=root,
                 idx=insight_copy,
-                products=products,
                 articles=articles,
                 guides=guides,
                 idx_href=idx_href,

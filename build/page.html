@@ -35,7 +35,7 @@
       <a href="{{ home }}#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
       <a href="{{ home }}#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
       <a href="{{ home }}#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
-      <a href="insights.html"><em>06</em>{{ P('资源', 'Notes') }}</a>
+      <a href="insights.html"><em>06</em>{{ P('文章', 'Articles') }}</a>
       <a href="{{ home }}#contact"><em>07</em>{{ P('联系', 'Contact') }}</a>
     </nav>
     <div class="hd-r">
@@ -50,7 +50,7 @@
 <article class="page">
   <header class="page-h">
     <div class="wrap">
-      <p class="page-crumb"><a href="{{ idx_href }}">← {{ P('资源中心 · 全部技术页', 'Notes · all pages') }}</a></p>
+      {% if page.get('group') != 'line' %}<p class="page-crumb"><a href="{{ idx_href }}">← {{ P('技术文章 · 全部', 'Articles · all') }}</a></p>{% endif %}
       <p class="kicker">{{ P(page.kicker, page.kicker_en) }}</p>
       <h1>{{ P(page.title, page.title_en) }}</h1>
       <p class="lead">{{ P(page.lead, page.lead_en) }}</p>
@@ -90,7 +90,7 @@
       <span>XG ENVIRONMENTAL EQUIPMENT CO., LTD.</span>
     </div>
     <div class="ft-links">
-      <a href="{{ idx_href }}">{{ P('资源中心', 'Notes') }}</a>
+      <a href="{{ idx_href }}">{{ P('技术文章', 'Articles') }}</a>
       {% for g in guides %}
       <a href="{{ g.href }}">{{ P(g.title, g.title_en) }}</a>
       {% endfor %}
