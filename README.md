@@ -4,7 +4,8 @@ XG 环保装备官网：中英两页纯静态站点，无 Node、无构建依赖
 
 - `index.html` — 中文首页
 - `en/index.html` — English
-- `content/brochure.yaml` — **唯一要改的文案**（画册 PDF 也读这份）
+- `content/brochure.yaml` — 首页文案（画册 PDF 也读这份）
+- `content/pages.yaml` — 常青技术页（中英各一份静态 HTML，不是博客）
 - `assets/src/` — 配图原件（构建时压到 ≤1400px）
 - `assets/img/` · `assets/css/` · `assets/fonts/` · `assets/brand/` — 生成物/内嵌资源
 - `build/` — 生成器：`site.py` + `site.html` + `style-site.css`

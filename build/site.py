@@ -26,6 +26,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 HERE = Path(__file__).resolve().parent        # build/
 WEB = HERE.parent                             # 仓根 = 站点根
 CONTENT = WEB / "content" / "brochure.yaml"
+PAGES = WEB / "content" / "pages.yaml"
 SRC_IMG = WEB / "assets" / "src"
 BRAND = WEB / "brand.yaml"
 
@@ -121,8 +122,36 @@ def main() -> int:
         lstrip_blocks=True,
     )
     tpl = env.get_template("site.html")
+    page_tpl = env.get_template("page.html")
+    origin = str(brand.get("website") or "").rstrip("/")
+    pages = (yaml.safe_load(PAGES.read_text(encoding="utf-8")) or {}).get("pages") or []
+
+    def url(path: str) -> str:
+        path = "/" + path.lstrip("/")
+        return f"{origin}{path}" if origin else path
+
+    def href(lang: str, slug: str | None = None) -> str:
+        if slug is None:
+            rel = "en/index.html" if lang == "en" else "index.html"
+        else:
+            rel = f"en/{slug}.html" if lang == "en" else f"{slug}.html"
+        return url(rel)
+
+    line_pages = {p["line"]: p["slug"] for p in pages if p.get("line")}
+    locs = [href("zh"), href("en")]
 
     for lang in ("zh", "en"):
+        root = ".." if lang == "en" else "."
+        guides = [
+            {
+                "href": f"{p['slug']}.html",
+                "title": p["title"],
+                "title_en": p["title_en"],
+                "slug": p["slug"],
+                "line": p.get("line"),
+            }
+            for p in pages
+        ]
         out = WEB / META[lang]["out"]
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(
@@ -132,11 +161,66 @@ def main() -> int:
                 lang=lang,
                 meta=META[lang],
                 dims=dims,
-                root=".." if lang == "en" else ".",
+                root=root,
+                guides=guides,
+                line_pages=line_pages,
+                canonical=href(lang),
+                href_zh=href("zh"),
+                href_en=href("en"),
             ) + "\n",
             encoding="utf-8",
         )
         print(f"✓ {out}")
+
+        for page in pages:
+            rel_out = f"en/{page['slug']}.html" if lang == "en" else f"{page['slug']}.html"
+            others = [g for g in guides if g["slug"] != page["slug"]][:3]
+            dest = WEB / rel_out
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text(
+                page_tpl.render(
+                    c=content,
+                    brand=brand,
+                    lang=lang,
+                    page=page,
+                    guides=guides,
+                    related=others,
+                    dims=dims,
+                    root=root,
+                    meta={
+                        "lang": META[lang]["lang"],
+                        "title": page["title_en"] if lang == "en" else page["title"],
+                        "desc": page["desc_en"] if lang == "en" else page["desc"],
+                    },
+                    canonical=href(lang, page["slug"]),
+                    href_zh=href("zh", page["slug"]),
+                    href_en=href("en", page["slug"]),
+                    alt=f"../{page['slug']}.html" if lang == "en" else f"en/{page['slug']}.html",
+                ) + "\n",
+                encoding="utf-8",
+            )
+            if lang == "zh":
+                locs.append(href("zh", page["slug"]))
+                locs.append(href("en", page["slug"]))
+            print(f"✓ {dest}")
+
+    sm_rows = "\n".join(
+        f"  <url><loc>{loc}</loc></url>" for loc in locs
+    )
+    (WEB / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{sm_rows}\n</urlset>\n",
+        encoding="utf-8",
+    )
+    sm = f"{origin}/sitemap.xml" if origin else "/sitemap.xml"
+    (WEB / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\n\nSitemap: {sm}\n",
+        encoding="utf-8",
+    )
+    if not origin:
+        print("! brand.yaml website 为空：sitemap 用站内路径，填上域名后重跑才是绝对地址")
+    print("✓ sitemap.xml  robots.txt")
 
     size = sum(f.stat().st_size for f in WEB.rglob("*") if f.is_file() and ".git" not in f.parts) / 1024 / 1024
     print(f"✓ {WEB} 共 {size:.1f} MB（图片 {len(IMAGES)} 张）")

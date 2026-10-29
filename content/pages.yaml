@@ -1,0 +1,174 @@
+# 常青技术页。数字只来自 content/brochure.yaml，不在这里新编产能、收率或客户故事。
+# 生成：build/site.py → /<slug>.html（中文）与 /en/<slug>.html（英文）
+
+pages:
+  - slug: tyre-pyrolysis
+    line: "01"
+    img: r-batch.jpg
+    title: 废轮胎间歇式裂解设备
+    title_en: Waste Tyre Batch Pyrolysis Plant
+    desc: 卧式旋转釜间歇式裂解：整胎切圈口进料，1–45 TPD，轮胎出油率 45%–50%，钢丝与炭黑可售。
+    desc_en: "Batch pyrolysis in a horizontal rotary reactor: whole tyres with a bead cut, 1–45 TPD, 45–50% oil yield, saleable wire and carbon black."
+    kicker: 间歇式裂解
+    kicker_en: BATCH PYROLYSIS
+    lead: 结构最简、出口量最大的一条线。一批一釜，整胎近乎直接进料。
+    lead_en: The simplest line, and the most exported. One batch per charge; whole tyres feed almost as they are.
+    sections:
+      - h: 这条线做什么
+        h_en: What the line does
+        p:
+          - 卧式旋转主炉，一批一釜：装料、密闭、升温裂解、冷却、出渣，单批约 20 小时。整胎只需切圈口，不切块、不磨粉。钢丝由抓机掏出，炭黑经螺旋进吨袋，两份都是可售产物。
+          - 不凝气回收后作后续批次的釜底加热燃料。微负压运行，油气不外泄；超压自动泄放并紧急停火。
+        p_en:
+          - "Horizontal rotary reactor, one batch per charge: loading, sealing, heating, cooling and discharge, about 20 hours. Whole tyres need only a bead cut — no shredding, no grinding. Wire is lifted out by grab; carbon black goes into bulk bags by screw. Both are saleable."
+          - Non-condensable gas is recovered and fired under the drum for later batches. Slight negative pressure keeps vapour inside; overpressure triggers relief and an emergency shut-off.
+      - h: 档位
+        h_en: Capacities
+        p:
+          - "1 / 2 / 5 / 10 / 15 / 20 / 45 TPD 可定做。常用档：YD-10（10 t/d，φ2600×6600×18，Q345R）、YD-15（15 t/d，φ2800×8000×18）、YD-20（20 t/d，φ3200×8000×20）。轮胎出油率按 45%–50% 计。撬装 YD-S1 为 1 t/d，到场接管即用。"
+          - 制造约 35 个工作日，现场安装 20 天，试运行培训 3 天，整机质保 12 个月。
+        p_en:
+          - "1 / 2 / 5 / 10 / 15 / 20 / 45 TPD can be built. Common sizes: YD-10 (10 t/d, φ2600×6600×18, Q345R), YD-15 (15 t/d, φ2800×8000×18), YD-20 (20 t/d, φ3200×8000×20). Tyre oil yield is quoted at 45–50%. The YD-S1 skid is 1 t/d and runs on arrival."
+          - About 35 working days to fabricate, 20 days to install, 3 days of trial run and training, 12-month warranty on the plant.
+      - h: 已交付的轮胎项目（名录）
+        h_en: Tyre projects on record
+        p:
+          - 名录中的轮胎间歇式项目包括：墨西哥 15 TPD、伊朗 20 TPD、埃及 1 与 5 TPD、阿富汗 10–20 TPD、巴基斯坦 2 / 5 TPD。摩洛哥 45 TPD 为轮胎加塑料。客户名称在画册中已脱敏，现场与方案原件可到厂查阅。
+        p_en:
+          - "Tyre batch plants on the project list include Mexico 15 TPD, Iran 20 TPD, Egypt 1 and 5 TPD, Afghanistan 10–20 TPD and Pakistan 2 / 5 TPD. Morocco 45 TPD is tyres plus plastics. Names in the brochure are partly anonymised; site photos and proposal originals can be reviewed at the factory."
+
+  - slug: plastic-pyrolysis
+    img: r-batch.jpg
+    title: 废塑料裂解设备
+    title_en: Waste Plastic Pyrolysis Plant
+    desc: 废塑料走间歇式裂解线，生活塑料、农膜、压缩料包与铝塑均可评估。斯里兰卡、秘鲁、中国项目在名录中。
+    desc_en: "Waste plastics run on the batch pyrolysis line. Household plastic, film, bales and alu-plastic can be assessed. Sri Lanka, Peru and China projects are on record."
+    kicker: 废塑料
+    kicker_en: WASTE PLASTICS
+    lead: 与轮胎同一套间歇式平台，原料换成塑料时要单独做选型，不套轮胎出油率。
+    lead_en: Same batch platform as tyres. Plastic is sized on its own — tyre oil-yield figures are not reused.
+    sections:
+      - h: 能评估的塑料
+        h_en: Plastics we assess
+        p:
+          - 画册列出的废塑料原料：生活塑料、农膜与包装膜、压缩料包、药用或光伏背板铝塑、造纸厂废塑料。不同料对应不同主机与预处理，请提供样品或化验单，选型与处理量测算不另收费。
+        p_en:
+          - "Plastics listed in the brochure: mixed household, film and packaging, baled feedstock, pharmaceutical or PV-backsheet alu-plastic, and paper-mill rejects. The reactor and pre-treatment change with the feed. Send a sample or a lab sheet; selection and throughput estimates are not charged extra."
+      - h: 设备口径
+        h_en: The plant
+        p:
+          - 间歇式裂解覆盖 1–45 TPD，一批一釜，单批约 20 小时。轮胎页上的 45%–50% 出油率只针对轮胎，塑料出油随料种变化，不在本页给统一数字。
+          - 名录：斯里兰卡 Ecolux Bio Harvest，间歇式 15 / 50 TPD，废塑料；秘鲁 Peru Bioquimicos，间歇式 2 / 10 TPD，废塑料；中国福建 / 河南，间歇式 15 TPD ×4 套，塑料 / 轮胎。
+        p_en:
+          - "Batch pyrolysis covers 1–45 TPD, one charge per batch, about 20 hours. The 45–50% oil yield on the tyre page is for tyres only. Plastic yield depends on the resin and is not given as one number here."
+          - "On record: Sri Lanka, Ecolux Bio Harvest, batch 15 / 50 TPD, waste plastics; Peru, Peru Bioquimicos, batch 2 / 10 TPD, waste plastics; China, Fujian / Henan, batch 15 TPD ×4 sets, plastics / tyres."
+
+  - slug: continuous-pyrolysis
+    line: "03"
+    img: r-continuous.jpg
+    title: 连续式裂解设备
+    title_en: Continuous Pyrolysis Plant
+    desc: 氮气置换、连续进出料、高温密封出渣。常用 30 / 40 / 50 t/d，YD-C30 与 YD-C45 两档参数见页内。
+    desc_en: "Nitrogen purged, continuous feed and discharge, sealed slag-out at temperature. Standard 30 / 40 / 50 t/d. YD-C30 and YD-C45 figures are on this page."
+    kicker: 连续式裂解
+    kicker_en: CONTINUOUS PYROLYSIS
+    lead: 不停机、不降温，把一批一釜变成流水线。
+    lead_en: No shutdown and no cool-down — a batch cycle becomes a production line.
+    sections:
+      - h: 工艺
+        h_en: Process
+        p:
+          - 卧式旋转主机配螺旋连续进料与高温密封出渣。氮气置换后升温至约 400 °C，原料、油气与炭渣连续流动，省掉升降温热损。不凝气经两级水封和阻火器进热风炉，供后续加热。
+          - 废气经二级喷淋脱硫除尘后排放，脱硝可按项目地标准选配。排放按当地限值承诺达标，不做「天生达标」。
+        p_en:
+          - "A rotary reactor with screw feeding and high-temperature sealed discharge. After a nitrogen purge the shell heats to about 400 °C; feed, oil vapour and residue move continuously, so heat-up and cool-down losses drop out. Off-gas passes two water seals and a flame arrestor into the hot-air furnace."
+          - "Flue gas goes through two-stage desulphurization and dedusting. DeNOx is optional to local limits. We commit to meeting the local standard with that equipment, not to being compliant by default."
+      - h: 两档主机
+        h_en: Two standard reactors
+        p:
+          - YD-C30：30 t/d，φ1800×24000×16，Q345R，装机 100 kW，占地 350 ㎡，3 人，设计寿命 5–8 年。YD-C45：45 t/d，φ1800×36000×18，12CrMoV，装机 120 kW，占地 500 ㎡，3 人，设计寿命 8–10 年。常用还有 40 / 50 t/d，可定做。
+          - 合同后约 70 个工作日交货。质保 3 年（易损件除外），终身免费检测维护。名录中的连续式项目：波兰政府项目，40 TPD，粪浆 / 污泥。
+        p_en:
+          - "YD-C30: 30 t/d, φ1800×24000×16, Q345R, 100 kW, 350 m², crew of 3, design life 5–8 years. YD-C45: 45 t/d, φ1800×36000×18, 12CrMoV, 120 kW, 500 m², crew of 3, design life 8–10 years. 40 and 50 t/d are also standard, and custom sizes are available."
+          - "Delivery is about 70 working days after contract. Warranty is 3 years excluding wear parts, with lifetime inspection support. Continuous project on record: Poland, government project, 40 TPD, slurry / sewage sludge."
+
+  - slug: waste-oil-distillation
+    line: "04"
+    img: r-distill.jpg
+    title: 废油蒸馏精制设备
+    title_en: Waste Oil Distillation Plant
+    desc: 常压或减压精馏，处理废机油、轮胎油与塑料油。柴油组分收率 75%–90%，8–30 TPD，无工艺污水外排。
+    desc_en: "Atmospheric or vacuum distillation for waste lube, tyre oil and plastic oil. 75–90% diesel-range yield, 8–30 TPD, no process wastewater."
+    kicker: 废油蒸馏
+    kicker_en: DISTILLATION
+    lead: 把裂解油和废机油做成柴油类工业燃料。
+    lead_en: Turns pyrolysis oil and waste lube into diesel-range industrial fuel.
+    sections:
+      - h: 工艺
+        h_en: Process
+        p:
+          - 常压或减压精馏，预热、反应釜、提气塔、盘管与列管冷凝、分流油罐和脱硫除尘在一条线上。减压时气化温度比常压提前约 50 °C，终馏温度低约 80 °C，燃料成本约省 20%。无工艺污水，冷却水循环；废气经喷枪进加热炉烧掉。
+          - 可处理的废油：废机油、轮胎油、塑料油、液压油 / 导热油、变压器油、渣油 / 舱底油。
+        p_en:
+          - "Atmospheric or vacuum distillation: preheater, reactor, stripping column, coil and shell-and-tube condensers, fraction tanks and a scrubber on one line. Under vacuum, vaporization starts about 50 °C earlier and the end point is about 80 °C lower, at roughly 20% less fuel. No process wastewater; cooling water is recirculated; off-gas is burnt in the furnace."
+          - "Oils listed: waste lube, tyre oil, plastic oil, hydraulic and heat-transfer oil, transformer oil, sludge and bilge oil."
+      - h: 档位与收率
+        h_en: Sizes and yield
+        p:
+          - 柴油组分收率 75%–90%。另一组馏分口径：柴油组分 60%–65%，轻油 5%–10%，重油 15%–20%。ZL-1600 为 8–10 t/d（φ1600×6600，Q345R）；ZL-2200 为 15–20 t/d（φ1800×7000）；ZL-2400 为 20–30 t/d（φ1800×7700，Q345R / 310S）。装机 16.7–24.2 kW，占地 200–400 ㎡，2–3 人。20 t/d 以下实际占地可小于 200 ㎡。催化剂 1 吨可处理 800–1000 吨废机油。
+          - 制造 35–40 天，质保 12 个月。名录：越南 Zana / David，撬装 2×1 TPD 加蒸馏 1 TPD，原料为轮胎油。马来西亚有蒸馏现场照片。
+        p_en:
+          - "Diesel-range yield is 75–90%. A second cut of the same product is diesel fraction 60–65%, light oil 5–10% and heavy oil 15–20%. ZL-1600 is 8–10 t/d (φ1600×6600, Q345R); ZL-2200 is 15–20 t/d (φ1800×7000); ZL-2400 is 20–30 t/d (φ1800×7700, Q345R / 310S). Installed power 16.7–24.2 kW, footprint 200–400 m², crew of 2–3. Below 20 t/d the real footprint can stay under 200 m². One tonne of catalyst treats 800–1000 t of waste oil."
+          - "Fabrication is 35–40 days, with a 12-month warranty. On record: Vietnam, Zana / David, skid 2×1 TPD plus 1 TPD distillation, tyre oil. A distillation site photo is from Malaysia."
+
+  - slug: pyrolysis-oil-yield
+    img: oil-pour.jpg
+    title: 裂解出油率与一批料的产出
+    title_en: Pyrolysis Oil Yield and Batch Output
+    desc: 轮胎间歇式出油率 45%–50%。10 TPD 线每批 10 吨轮胎的用电、补水、人工与油、炭、气产出，按画册口径列出。
+    desc_en: "Tyre batch oil yield is 45–50%. Electricity, water, crew and oil, char and gas from a 10 t tyre batch on a 10 TPD line, as stated in the brochure."
+    kicker: 产出
+    kicker_en: OUTPUT
+    lead: 下面的数字只描述 10 TPD 间歇式、每批 10 吨轮胎。塑料、油泥不套用这组数。
+    lead_en: These figures describe a 10 TPD batch line and a 10 t tyre charge. They are not reused for plastics or sludge.
+    sections:
+      - h: 出油率
+        h_en: Oil yield
+        p:
+          - 间歇式规格表把轮胎出油率标为 45%–50%。蒸馏线的柴油组分收率是另一件事，为 75%–90%，见废油蒸馏页。
+        p_en:
+          - "The batch specification table marks tyre oil yield at 45–50%. Diesel-range yield on the distillation line is a different figure, 75–90%, on the waste-oil page."
+      - h: 一批 10 吨轮胎
+        h_en: One 10-tonne tyre batch
+        p:
+          - 投入：整线日用电 360 kWh，冷却水补水 2 m³，操作 3 人/班，开车天然气 400 m³（稳定后改由自产气供后续批次）。
+          - 产出：裂解油约 4.5 t，炭渣 / 回收炭黑约 3.8 t，不凝气约 0.9 t（回烧），钢丝视轮胎类型另计。四项合计不必等于 10 t。
+          - 按 300 个运行日折算：入厂原料约 3,000 t/年，裂解油约 1,350 t/年，炭渣约 1,140 t/年。检修与雨季另计。设备投资与回本按项目测算，不在本页列价。
+        p_en:
+          - "Inputs: 360 kWh electricity for the line per day, 2 m³ cooling-water make-up, 3 operators per shift, 400 m³ of natural gas to start (off-gas heats later batches once the line is stable)."
+          - "Outputs: about 4.5 t pyrolysis oil, about 3.8 t char / recovered carbon black, about 0.9 t non-condensable gas fired back to the burner. Steel wire depends on the tyre and is extra. The four outputs need not sum to 10 t."
+          - "Over 300 operating days: about 3,000 t/yr of feedstock, about 1,350 t/yr of oil, about 1,140 t/yr of char. Maintenance and a rainy season sit outside that. Equipment price and payback are calculated per project and are not listed here."
+
+  - slug: reference-mexico-tyres
+    img: r-batch.jpg
+    title: 案例：墨西哥 15 TPD 废轮胎间歇式
+    title_en: "Reference: Mexico 15 TPD Waste Tyre Batch Plant"
+    desc: 项目名录中的一条：墨西哥，间歇式 15 TPD，原料废轮胎。页内只写名录与 YD-15 的公开参数，不补充未公开的运行数据。
+    desc_en: "One line from the project list: Mexico, batch 15 TPD, waste tyres. This page states that row and the published YD-15 figures only."
+    kicker: 案例
+    kicker_en: REFERENCE
+    lead: 名录里的一条轮胎项目。客户名在画册中写作 Cxx，此处不展开。
+    lead_en: One tyre project from the list. The brochure records the client as Cxx; nothing further is added here.
+    sections:
+      - h: 名录原文
+        h_en: What is on record
+        p:
+          - 国家：墨西哥。机型：间歇式 15 TPD。原料：废轮胎。客户名称已脱敏。现场照片与方案原件可到厂查阅，本页不转述未写入画册的产量或合同条款。
+        p_en:
+          - "Country: Mexico. Line: batch 15 TPD. Feedstock: waste tyres. The client name is anonymised. Site photos and the original proposal can be reviewed at the factory. This page does not add output or contract terms that are not in the brochure."
+      - h: 15 TPD 对应的公开档位
+        h_en: The published 15 TPD size
+        p:
+          - YD-15：15 t/d，主炉 φ2800×8000×18，材质 Q345R，单批约 20 小时，轮胎出油率 45%–50%。间歇式制造约 35 个工作日，安装 20 天，试运行培训 3 天，整机质保 12 个月。
+        p_en:
+          - "YD-15: 15 t/d, reactor φ2800×8000×18, Q345R, about 20 hours per batch, tyre oil yield 45–50%. Batch plants take about 35 working days to fabricate, 20 days to install and 3 days to commission and train, with a 12-month warranty."
