@@ -182,8 +182,6 @@ def main() -> int:
                 dims=dims,
                 root=root,
                 guides=guides,
-                products=products,
-                articles=articles,
                 line_pages=line_pages,
                 idx=insight_copy,
                 idx_href=idx_href,

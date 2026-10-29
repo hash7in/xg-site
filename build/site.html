@@ -108,19 +108,6 @@
         </div>
       {% if pg %}</a>{% else %}</article>{% endif %}
       {% endfor %}
-      {# 第六格：产品矩阵右下角原本空着，做成去资源中心的入口 #}
-      <a class="card card-notes reveal" href="{{ idx_href }}">
-        <div class="notes-in">
-          <p class="notes-k">{{ P('资源中心', 'NOTES') }}<em>{{ '%02d'|format(guides|length) }}</em></p>
-          <p class="notes-l">{{ P('这里还有更多文章：出油率与一批料的产出、项目案例，以及每条线的完整参数。', 'More here: oil yield and one batch of output, project references, and the full spec sheet for each line.') }}</p>
-          <dl class="notes-list">
-            <div><dt>{{ P('设备与机型页', 'Equipment pages') }}</dt><dd>{{ '%02d'|format(products|length) }}</dd></div>
-            <div><dt>{{ P('技术与案例文章', 'Notes & references') }}</dt><dd>{{ '%02d'|format(articles|length) }}</dd></div>
-            <div><dt>{{ P('语言', 'Languages') }}</dt><dd>ZH / EN</dd></div>
-          </dl>
-          <span class="notes-go">{{ P('看全部技术资料', 'Read all notes') }}<i aria-hidden="true">↗</i></span>
-        </div>
-      </a>
     </div>
     <div class="combos">
       <p class="mini-h">{{ P(c.lines.combos_head, c.lines.combos_head_en) }}</p>
