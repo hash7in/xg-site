@@ -562,6 +562,20 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
 .idx-bar .mini-h { border: 0; padding: 0; }
 .idx-bar-note { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); margin-left: auto; }
 .idx .card-more { color: var(--navy); }
+.idx-art { padding-top: 64px; }
+.idx-art .idx-bar { margin-bottom: 0; }
+.idx-rows { border-top: 1px solid var(--line); }
+.idx-row {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) 24px; gap: 22px;
+  align-items: start; padding: 24px 0 24px 7px; border-bottom: 1px solid var(--line);
+  transition: background .2s;
+}
+.idx-row:hover { background: var(--tint); }
+.idx-row-n { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; color: var(--green); padding-top: 3px; }
+.idx-row-t h3 { margin-top: 6px; font-size: 18px; }
+.idx-row-t p { margin-top: 7px; font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 76ch; }
+.idx-row .idx-go { align-self: center; font-size: 16px; color: var(--green); transition: transform .25s; }
+.idx-row:hover .idx-go { transform: translate(3px, -3px); }
 .idx-foot { margin-top: 72px; padding: 64px 0; background: var(--tint); border-top: 1px solid var(--line); }
 .idx-foot-in { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 56px; }
 .idx-note .fine { margin-top: 12px; }
