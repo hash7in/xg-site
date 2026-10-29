@@ -9,12 +9,20 @@ insights:
   title: 技术资料与项目案例
   title_en: Technical Notes & Project References
   lead: >
-    四条在售机型各自的结构、档位与交付条件，产出与投入的口径，以及名录里的项目。
+    五条在售机型各自的结构、档位与交付条件，产出与投入的口径，以及名录里的项目。
     每页只写能被画册、设备配置表或现场照片对上的一句话，不编数字。
   lead_en: >
-    Structure, capacity and delivery terms for the four lines we build; how output and input
+    Structure, capacity and delivery terms for the five lines we build; how output and input
     are stated; and the projects on record. Every page carries only what the brochure, the
     equipment schedule or a site photo can back up. No invented numbers.
+  prod_head: 产品与设备线
+  prod_head_en: Equipment & lines
+  prod_desc: 五条在售机型，加上废塑料这一种原料单独的选型页。
+  prod_desc_en: The five lines we build, plus a separate page for plastics as a feedstock.
+  article_head: 技术文章与项目案例
+  article_head_en: Notes & references
+  article_desc: 出油率与一批料的产出怎么算，以及名录里的项目。
+  article_desc_en: How yield and one batch of output are stated, and the projects on record.
   note_head: 这些页面怎么写的
   note_head_en: How these pages are written
   note: >

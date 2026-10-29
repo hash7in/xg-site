@@ -168,7 +168,8 @@ def main() -> int:
             for g in group_meta.values()
         ]
         groups = [g for g in groups if g["pages"]]
-        notes = [x for g in groups for x in g["pages"]]
+        products = [x for g in groups if g["key"] == "line" for x in g["pages"]]
+        articles = [x for g in groups if g["key"] != "line" for x in g["pages"]]
         idx_href = "insights.html"
         out = WEB / META[lang]["out"]
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -202,8 +203,8 @@ def main() -> int:
                 dims=dims,
                 root=root,
                 idx=insight_copy,
-                groups=groups,
-                notes=notes,
+                products=products,
+                articles=articles,
                 guides=guides,
                 idx_href=idx_href,
                 meta={

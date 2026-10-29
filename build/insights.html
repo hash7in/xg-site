@@ -60,22 +60,22 @@
       <p class="lead">{{ P(idx.lead, idx.lead_en) }}</p>
       <dl class="idx-meta">
         <div><dt>{{ P('篇目', 'Notes') }}</dt><dd>{{ '%02d'|format(guides|length) }}</dd></div>
-        <div><dt>{{ P('分组', 'Groups') }}</dt><dd>{{ '%02d'|format(groups|length) }}</dd></div>
-        <div><dt>{{ P('机型', 'Lines') }}</dt><dd>04</dd></div>
+        <div><dt>{{ P('产品', 'Products') }}</dt><dd>{{ '%02d'|format(products|length) }}</dd></div>
+        <div><dt>{{ P('文章', 'Articles') }}</dt><dd>{{ '%02d'|format(articles|length) }}</dd></div>
         <div><dt>{{ P('语言', 'Language') }}</dt><dd>ZH / EN</dd></div>
       </dl>
     </div>
   </header>
 
-  {# 全部篇目：一组一张卡，按 pages.yaml 的 groups 顺序排列 #}
-  <section class="idx-list-wrap">
+  {# 栏目一：产品与设备线 —— 图片卡 #}
+  <section class="idx-list-wrap" id="products">
     <div class="wrap">
       <div class="idx-bar">
-        <p class="mini-h">{{ P('全部篇目', 'All notes') }}<em>{{ '%02d'|format(guides|length) }}</em></p>
-        <p class="idx-bar-note">{{ P('按设备线、产出、案例排列', 'Ordered by line, output and references') }}</p>
+        <p class="mini-h">{{ P(idx.prod_head, idx.prod_head_en) }}<em>{{ '%02d'|format(products|length) }}</em></p>
+        <p class="idx-bar-note">{{ P(idx.prod_desc, idx.prod_desc_en) }}</p>
       </div>
       <div class="cards">
-        {% for p in notes %}
+        {% for p in products %}
         <a class="card" href="{{ p.href }}">
           <div class="card-img">{{ img(p.img, '', P(p.title, p.title_en)) }}<span class="chip">{{ P(p.kicker, p.kicker_en) }}</span></div>
           <div class="card-body">
@@ -84,6 +84,29 @@
             <p>{{ P(p.desc, p.desc_en) }}</p>
             <span class="card-more">{{ P('读这一页', 'Read the note') }} →</span>
           </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# 栏目二：技术文章与案例 —— 文字条目，跟上面的机器页分开 #}
+  <section class="idx-list-wrap idx-art" id="articles">
+    <div class="wrap">
+      <div class="idx-bar">
+        <p class="mini-h">{{ P(idx.article_head, idx.article_head_en) }}<em>{{ '%02d'|format(articles|length) }}</em></p>
+        <p class="idx-bar-note">{{ P(idx.article_desc, idx.article_desc_en) }}</p>
+      </div>
+      <div class="idx-rows">
+        {% for p in articles %}
+        <a class="idx-row" href="{{ p.href }}">
+          <span class="idx-row-n">{{ p.n }}</span>
+          <div class="idx-row-t">
+            <span class="idx-k">{{ P(p.kicker, p.kicker_en) }}</span>
+            <h3>{{ P(p.title, p.title_en) }}</h3>
+            <p>{{ P(p.desc, p.desc_en) }}</p>
+          </div>
+          <span class="idx-go" aria-hidden="true">↗</span>
         </a>
         {% endfor %}
       </div>
