@@ -296,6 +296,31 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
 .card-body h3 { margin-top: 8px; }
 .card-body p { margin-top: 10px; font-size: 14.5px; line-height: 1.7; color: var(--muted); }
 
+.card-notes {
+  display: flex; align-items: stretch;
+  background: var(--deep); border-color: var(--deep);
+  transition: background .25s, border-color .25s, transform .35s cubic-bezier(.2,.7,.3,1);
+}
+.card-notes:hover { background: var(--navy); border-color: var(--green); transform: translateY(-4px); }
+.notes-in { display: flex; flex-direction: column; gap: 14px; padding: 28px 26px; width: 100%; }
+.notes-k {
+  display: flex; align-items: baseline; gap: 10px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; color: var(--green-soft);
+}
+.notes-k em { font-size: 13px; letter-spacing: .1em; color: rgba(255,255,255,.5); }
+.notes-l { font-size: 14.5px; line-height: 1.75; color: var(--on-dark); }
+.notes-list { margin-top: 2px; }
+.notes-list > div { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.notes-list dt { font-family: var(--cn); font-size: 12.5px; color: var(--on-dark-dim); }
+.notes-list dd { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; color: var(--green-soft); }
+.notes-go {
+  margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-top: 18px; border-top: 1px solid var(--on-dark-line);
+  font-family: var(--cn); font-size: 14px; font-weight: 500; color: #fff;
+}
+.notes-go i { font-family: var(--mono); color: var(--green-soft); font-style: normal; transition: transform .25s; }
+.card-notes:hover .notes-go i { transform: translate(3px, -3px); }
+
 .combos { margin-top: 44px; padding-top: 34px; border-top: 1px solid var(--line); }
 .combo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; margin-top: 20px; }
 .combo { padding: 18px 20px; background: #fff; border: 1px solid var(--line); margin: -1px 0 0 -1px; border-left: 2px solid var(--line); transition: border-color .2s, background .2s; }
