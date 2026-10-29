@@ -333,7 +333,10 @@
       </a>
       {% endfor %}
     </div>
-    <p class="idx-all"><a class="btn" href="{{ idx_href }}">{{ P('全部 ' ~ articles|length ~ ' 篇文章', 'All ' ~ articles|length ~ ' articles') }}</a></p>
+    <a class="idx-more-row" href="{{ idx_href }}">
+      <span>{{ P('全部 ' ~ articles|length ~ ' 篇文章', 'All ' ~ articles|length ~ ' articles') }}</span>
+      <i aria-hidden="true">↗</i>
+    </a>
   </div>
 </section>
 
