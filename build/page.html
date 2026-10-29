@@ -34,9 +34,9 @@
       <a href="{{ home }}#process"><em>02</em>{{ P('工艺', 'Process') }}</a>
       <a href="{{ home }}#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
       <a href="{{ home }}#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
-      <a href="{{ home }}#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
-      <a href="insights.html"><em>06</em>{{ P('文章', 'Articles') }}</a>
-      <a href="{{ home }}#contact"><em>07</em>{{ P('联系', 'Contact') }}</a>
+      <a href="{{ home }}#cases"><em>06</em>{{ P('客户', 'Clients') }}</a>
+      <a href="insights.html"><em>08</em>{{ P('文章', 'Articles') }}</a>
+      <a href="{{ home }}#contact"><em>09</em>{{ P('联系', 'Contact') }}</a>
     </nav>
     <div class="hd-r">
       <a class="lang" href="{{ alt }}" hreflang="{{ 'zh-CN' if lang == 'en' else 'en' }}">{{ '中文' if lang == 'en' else 'EN' }}</a>
@@ -91,9 +91,6 @@
     </div>
     <div class="ft-links">
       <a href="{{ idx_href }}">{{ P('技术文章', 'Articles') }}</a>
-      {% for g in guides %}
-      <a href="{{ g.href }}">{{ P(g.title, g.title_en) }}</a>
-      {% endfor %}
       <a href="{{ home }}">{{ P('首页', 'Home') }}</a>
     </div>
     <p class="ft-legal">{{ c.contact.legal }} · {{ c.meta.edition_en if lang == 'en' else c.meta.edition }} · {{ c.meta.code }}</p>

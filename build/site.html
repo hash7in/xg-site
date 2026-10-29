@@ -41,9 +41,9 @@
       <a href="#process"><em>02</em>{{ P('工艺', 'Process') }}</a>
       <a href="#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
       <a href="#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
-      <a href="#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
-      <a href="{{ idx_href }}"><em>06</em>{{ P('文章', 'Articles') }}</a>
-      <a href="#contact"><em>07</em>{{ P('联系', 'Contact') }}</a>
+      <a href="#cases"><em>06</em>{{ P('客户', 'Clients') }}</a>
+      <a href="{{ idx_href }}"><em>08</em>{{ P('文章', 'Articles') }}</a>
+      <a href="#contact"><em>09</em>{{ P('联系', 'Contact') }}</a>
     </nav>
     <div class="hd-r">
       <a class="lang" href="{{ '../index.html' if lang == 'en' else 'en/index.html' }}" hreflang="{{ 'zh-CN' if lang == 'en' else 'en' }}">{{ '中文' if lang == 'en' else 'EN' }}</a>
@@ -244,7 +244,7 @@
 <section class="sec" id="certs">
   <div class="wrap">
     <div class="sec-h">
-      <p class="kicker">{{ P(c.certs.kicker, c.certs.kicker_en) }}</p>
+      <p class="kicker"><em>05</em>{{ P(c.certs.kicker, c.certs.kicker_en) }}</p>
       <h2>{{ P(c.certs.lead, c.certs.lead_en) }}</h2>
     </div>
     <div class="cert-grid">
@@ -264,7 +264,7 @@
 <section class="sec sec-alt" id="cases">
   <div class="wrap">
     <div class="sec-h">
-      <p class="kicker"><em>05</em>{{ P(c.cases.kicker, c.cases.kicker_en) }}</p>
+      <p class="kicker"><em>06</em>{{ P(c.cases.kicker, c.cases.kicker_en) }}</p>
       <h2>{{ P(c.cases.lead, c.cases.lead_en) }}</h2>
     </div>
     <div class="stats4">
@@ -291,7 +291,7 @@
 <section class="sec" id="service">
   <div class="wrap">
     <div class="sec-h">
-      <p class="kicker">{{ P(c.service.kicker, c.service.kicker_en) }}</p>
+      <p class="kicker"><em>07</em>{{ P(c.service.kicker, c.service.kicker_en) }}</p>
       <h2>{{ P(c.service.lead, c.service.lead_en) }}</h2>
     </div>
     <div class="svc-grid">
@@ -315,7 +315,7 @@
 <section class="sec sec-alt" id="articles">
   <div class="wrap">
     <div class="sec-h">
-      <p class="kicker"><em>06</em>{{ P(idx.kicker, idx.kicker_en) }}</p>
+      <p class="kicker"><em>08</em>{{ P(idx.kicker, idx.kicker_en) }}</p>
       <h2>{{ P(idx.title, idx.title_en) }}</h2>
       <p class="lead">{{ P(idx.lead, idx.lead_en) }}</p>
     </div>
@@ -346,7 +346,7 @@
   <div class="wrap">
     <div class="grid-2 cta-grid">
       <div>
-        <p class="kicker"><em>07</em>{{ P(c.contact.kicker, c.contact.kicker_en) }}</p>
+        <p class="kicker"><em>09</em>{{ P(c.contact.kicker, c.contact.kicker_en) }}</p>
         <h2>{{ P(c.contact.title, c.contact.title_en) }}</h2>
         <p class="lead">{{ P(c.contact.factory, c.contact.factory_en) }}</p>
         <p class="addr">{{ P(c.contact.address, c.contact.address_en) }}</p>
@@ -379,7 +379,6 @@
     </div>
     <div class="ft-links">
       <a href="{{ idx_href }}">{{ P('技术文章', 'Articles') }}</a>
-      {% for g in guides %}<a href="{{ g.href }}">{{ P(g.title, g.title_en) }}</a>{% endfor %}
       {% if c.contact.web %}<a href="{{ c.contact.web if c.contact.web.startswith('http') else 'http://' ~ c.contact.web }}">{{ c.contact.web }}</a>{% endif %}
       {% if c.contact.web2 %}<a href="{{ c.contact.web2 if c.contact.web2.startswith('http') else 'http://' ~ c.contact.web2 }}">{{ c.contact.web2 }}</a>{% endif %}
       <a href="{{ root }}/{{ 'en/' if lang == 'en' else '' }}index.html">{{ '中文 / EN' if lang == 'en' else 'EN / 中文' }}</a>
