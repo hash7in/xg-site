@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.desc }}">
+<meta name="theme-color" content="#0B2437">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.desc }}">
+<meta property="og:image" content="{{ root }}/assets/img/cover-kiln.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="{{ root }}/assets/brand/logo-mark.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="zh-CN" href="{{ href_zh }}">
+<link rel="alternate" hreflang="en" href="{{ href_en }}">
+<link rel="alternate" hreflang="x-default" href="{{ href_en }}">
+<link rel="preload" as="font" type="font/woff2" href="{{ root }}/assets/fonts/{{ 'harmonyos-sans-sc-400-normal.woff2' if lang == 'zh' else 'barlow-latin-400-normal.woff2' }}" crossorigin>
+<link rel="stylesheet" href="{{ root }}/assets/css/site.css">
+</head>
+<body class="lang-{{ lang }}">
+<a class="skip" href="#main">{{ '跳到主要内容' if lang == 'zh' else 'Skip to content' }}</a>
+{% macro P(cn, en) -%}{{ en if lang == 'en' and en else cn }}{%- endmacro %}
+{% macro img(name, cls, alt) -%}
+<img class="{{ cls }}" src="{{ root }}/assets/img/{{ name }}" alt="{{ alt }}" width="{{ dims[name][0] }}" height="{{ dims[name][1] }}" loading="lazy" decoding="async">
+{%- endmacro %}
+{% set home = root ~ '/' ~ ('en/' if lang == 'en' else '') ~ 'index.html' %}
+
+<header class="hd is-scrolled" id="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="{{ home }}">
+      <img class="mark" src="{{ root }}/assets/brand/logo-mark-reverse.svg" alt="XG" width="28" height="28">
+      <span class="logo-t">{% if lang == 'en' %}XINGE<i>MACHINERY</i>{% else %}新歌环保<i>XINGE MACHINERY</i>{% endif %}</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="{{ '主导航' if lang == 'zh' else 'Main' }}">
+      <a href="{{ home }}#products"><em>01</em>{{ P('产品', 'Products') }}</a>
+      <a href="{{ home }}#process"><em>02</em>{{ P('工艺', 'Process') }}</a>
+      <a href="{{ home }}#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
+      <a href="{{ home }}#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
+      <a href="{{ home }}#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
+      <a class="is-on" href="insights.html" aria-current="page"><em>06</em>{{ P('资源', 'Notes') }}</a>
+      <a href="{{ home }}#contact"><em>07</em>{{ P('联系', 'Contact') }}</a>
+    </nav>
+    <div class="hd-r">
+      <a class="lang" href="{{ alt }}" hreflang="{{ 'zh-CN' if lang == 'en' else 'en' }}">{{ '中文' if lang == 'en' else 'EN' }}</a>
+      <a class="btn btn-sm" href="{{ home }}#contact">{{ P('获取方案', 'Get a proposal') }}</a>
+      <button class="burger" id="burger" type="button" aria-label="{{ '菜单' if lang == 'zh' else 'Menu' }}" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="idx">
+
+  {# 页头：编号 + 标题 + 一句话口径 + 三个计数 #}
+  <header class="idx-h">
+    <div class="wrap">
+      <p class="kicker"><em>{{ '%02d'|format(guides|length) }}</em>{{ P(idx.kicker, idx.kicker_en) }}</p>
+      <h1>{{ P(idx.title, idx.title_en) }}</h1>
+      <p class="lead">{{ P(idx.lead, idx.lead_en) }}</p>
+      <dl class="idx-meta">
+        <div><dt>{{ P('篇目', 'Notes') }}</dt><dd>{{ '%02d'|format(guides|length) }}</dd></div>
+        <div><dt>{{ P('分组', 'Groups') }}</dt><dd>{{ '%02d'|format(groups|length) }}</dd></div>
+        <div><dt>{{ P('机型', 'Lines') }}</dt><dd>04</dd></div>
+        <div><dt>{{ P('语言', 'Language') }}</dt><dd>ZH / EN</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  {# 全部篇目：一组一张卡，按 pages.yaml 的 groups 顺序排列 #}
+  <section class="idx-list-wrap">
+    <div class="wrap">
+      <div class="idx-bar">
+        <p class="mini-h">{{ P('全部篇目', 'All notes') }}<em>{{ '%02d'|format(guides|length) }}</em></p>
+        <p class="idx-bar-note">{{ P('按设备线、产出、案例排列', 'Ordered by line, output and references') }}</p>
+      </div>
+      <div class="cards">
+        {% for p in notes %}
+        <a class="card" href="{{ p.href }}">
+          <div class="card-img">{{ img(p.img, '', P(p.title, p.title_en)) }}<span class="chip">{{ P(p.kicker, p.kicker_en) }}</span></div>
+          <div class="card-body">
+            <span class="card-num">{{ p.n }}</span>
+            <h3>{{ P(p.title, p.title_en) }}</h3>
+            <p>{{ P(p.desc, p.desc_en) }}</p>
+            <span class="card-more">{{ P('读这一页', 'Read the note') }} →</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# 底：写法口径 + 要方案的入口 #}
+  <section class="idx-foot">
+    <div class="wrap idx-foot-in">
+      <div class="idx-note">
+        <p class="mini-h">{{ P(idx.note_head, idx.note_head_en) }}</p>
+        <p class="fine">{{ P(idx.note, idx.note_en) }}</p>
+      </div>
+      <div class="idx-cta">
+        <p class="mini-h">{{ P('下一步', 'Next step') }}</p>
+        <p>{{ P('给一组原料与目标处理量，我们回一份按你这批料选的机型、报价与交付计划。', 'Send the feedstock and a target throughput; we reply with the line sized for that feed, its price and delivery plan.') }}</p>
+        <a class="btn" href="{{ home }}#contact">{{ P('要一份方案', 'Ask for a proposal') }}</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <p class="ft-code">{{ c.meta.code }}</p>
+    <div class="ft-brand">
+      <b>{% if lang == 'en' %}XINGE PYROLYSIS &amp; BIOCHAR MACHINERY{% else %}新歌环保{% endif %}</b>
+      <span>XG ENVIRONMENTAL EQUIPMENT CO., LTD.</span>
+    </div>
+    <div class="ft-links">
+      <a href="insights.html">{{ P('资源中心', 'Notes') }}</a>
+      {% for g in guides %}
+      <a href="{{ g.href }}">{{ P(g.title, g.title_en) }}</a>
+      {% endfor %}
+      <a href="{{ home }}">{{ P('首页', 'Home') }}</a>
+    </div>
+    <p class="ft-legal">{{ c.contact.legal }} · {{ c.meta.edition_en if lang == 'en' else c.meta.edition }} · {{ c.meta.code }}</p>
+  </div>
+</footer>
+
+{% set wa = c.contact.whatsapp|default(''|string)|replace(' ', '')|replace('+', '')|replace('-', '') %}
+{% if wa %}
+<a class="wa" href="https://wa.me/{{ wa }}?text={{ P(c.contact.whatsapp_msg, c.contact.whatsapp_msg_en)|urlencode }}"
+   target="_blank" rel="noopener"
+   aria-label="{{ P('WhatsApp 联系我们', 'Chat with us on WhatsApp') }}">
+  <svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.16 6.45 6.6 2.01 12.05 2.01c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></svg>
+  <span class="wa-t">{{ P('WhatsApp 咨询', 'Chat on WhatsApp') }}</span>
+</a>
+{% endif %}
+
+<script>
+  const burger = document.getElementById('burger'), nav = document.getElementById('nav');
+  const setNav = open => {
+    nav.classList.toggle('is-open', open);
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('nav-open', open);
+  };
+  burger.addEventListener('click', () => setNav(!nav.classList.contains('is-open')));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { setNav(false); burger.focus(); } });
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
+</script>
+</body>
+</html>

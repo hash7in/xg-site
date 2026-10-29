@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>/index.html</loc></url>
   <url><loc>/en/index.html</loc></url>
+  <url><loc>/insights.html</loc></url>
+  <url><loc>/en/insights.html</loc></url>
   <url><loc>/tyre-pyrolysis.html</loc></url>
   <url><loc>/en/tyre-pyrolysis.html</loc></url>
   <url><loc>/plastic-pyrolysis.html</loc></url>

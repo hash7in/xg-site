@@ -123,8 +123,12 @@ def main() -> int:
     )
     tpl = env.get_template("site.html")
     page_tpl = env.get_template("page.html")
+    idx_tpl = env.get_template("insights.html")
     origin = str(brand.get("website") or "").rstrip("/")
-    pages = (yaml.safe_load(PAGES.read_text(encoding="utf-8")) or {}).get("pages") or []
+    pages_doc = yaml.safe_load(PAGES.read_text(encoding="utf-8")) or {}
+    pages = pages_doc.get("pages") or []
+    insight_copy = pages_doc.get("insights") or {}
+    group_meta = {g["key"]: g for g in (pages_doc.get("groups") or [])}
 
     def url(path: str) -> str:
         path = "/" + path.lstrip("/")
@@ -147,11 +151,25 @@ def main() -> int:
                 "href": f"{p['slug']}.html",
                 "title": p["title"],
                 "title_en": p["title_en"],
+                "desc": p["desc"],
+                "desc_en": p["desc_en"],
+                "kicker": p.get("kicker") or (group_meta.get(p.get("group"), {}) or {}).get("title", ""),
+                "kicker_en": p.get("kicker_en") or (group_meta.get(p.get("group"), {}) or {}).get("title_en", ""),
                 "slug": p["slug"],
+                "img": p["img"],
+                "group": p.get("group"),
                 "line": p.get("line"),
+                "n": f"{i + 1:02d}",
             }
-            for p in pages
+            for i, p in enumerate(pages)
         ]
+        groups = [
+            {**g, "pages": [x for x in guides if x["group"] == g["key"]]}
+            for g in group_meta.values()
+        ]
+        groups = [g for g in groups if g["pages"]]
+        notes = [x for g in groups for x in g["pages"]]
+        idx_href = "insights.html"
         out = WEB / META[lang]["out"]
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(
@@ -164,6 +182,8 @@ def main() -> int:
                 root=root,
                 guides=guides,
                 line_pages=line_pages,
+                idx=insight_copy,
+                idx_href=idx_href,
                 canonical=href(lang),
                 href_zh=href("zh"),
                 href_en=href("en"),
@@ -171,6 +191,38 @@ def main() -> int:
             encoding="utf-8",
         )
         print(f"✓ {out}")
+
+        # 资源中心：全部技术页的索引页，避免这些页面只出现在页脚
+        idx_out = WEB / ("en/" if lang == "en" else "") / "insights.html"
+        idx_out.write_text(
+            idx_tpl.render(
+                c=content,
+                brand=brand,
+                lang=lang,
+                dims=dims,
+                root=root,
+                idx=insight_copy,
+                groups=groups,
+                notes=notes,
+                guides=guides,
+                idx_href=idx_href,
+                meta={
+                    "lang": META[lang]["lang"],
+                    "title": (insight_copy.get("title_en") if lang == "en" else insight_copy.get("title"))
+                    + (" · XG" if lang == "en" else " · 新歌环保"),
+                    "desc": insight_copy.get("lead_en") if lang == "en" else insight_copy.get("lead"),
+                },
+                canonical=href(lang, "insights"),
+                href_zh=href("zh", "insights"),
+                href_en=href("en", "insights"),
+                alt=f"../insights.html" if lang == "en" else "en/insights.html",
+            ) + "\n",
+            encoding="utf-8",
+        )
+        print(f"✓ {idx_out}")
+        if lang == "zh":
+            locs.insert(2, href("zh", "insights"))
+            locs.insert(3, href("en", "insights"))
 
         for page in pages:
             rel_out = f"en/{page['slug']}.html" if lang == "en" else f"{page['slug']}.html"
@@ -195,6 +247,7 @@ def main() -> int:
                     canonical=href(lang, page["slug"]),
                     href_zh=href("zh", page["slug"]),
                     href_en=href("en", page["slug"]),
+                    idx_href=idx_href,
                     alt=f"../{page['slug']}.html" if lang == "en" else f"en/{page['slug']}.html",
                 ) + "\n",
                 encoding="utf-8",

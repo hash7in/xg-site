@@ -1,8 +1,52 @@
 # 常青技术页。数字只来自 content/brochure.yaml，不在这里新编产能、收率或客户故事。
 # 生成：build/site.py → /<slug>.html（中文）与 /en/<slug>.html（英文）
+# 资源中心索引：/insights.html 与 /en/insights.html（按下面的 groups 分组展示）
+
+# 资源中心页头文案
+insights:
+  kicker: 资源中心
+  kicker_en: RESOURCES
+  title: 技术资料与项目案例
+  title_en: Technical Notes & Project References
+  lead: >
+    四条在售机型各自的结构、档位与交付条件，产出与投入的口径，以及名录里的项目。
+    每页只写能被画册、设备配置表或现场照片对上的一句话，不编数字。
+  lead_en: >
+    Structure, capacity and delivery terms for the four lines we build; how output and input
+    are stated; and the projects on record. Every page carries only what the brochure, the
+    equipment schedule or a site photo can back up. No invented numbers.
+  note_head: 这些页面怎么写的
+  note_head_en: How these pages are written
+  note: >
+    产能、收率、交货期与名录只取自设备配置表与画册；没有实测数据的地方写明「按项目测算」，
+    不填一个看起来合理的数字。名录里的客户名称在画册中已部分脱敏，现场与方案原件可到厂查阅。
+  note_en: >
+    Capacities, yields, lead times and the project list come from the equipment schedule and the
+    brochure. Where we have no measured data the page says "calculated per project" instead of
+    filling in a plausible number. Client names are partly anonymised in the brochure; site
+    photos and proposal originals can be reviewed at the factory.
+
+# 资源中心的分组（顺序即展示顺序）
+groups:
+  - key: line
+    title: 设备线
+    title_en: Equipment lines
+    desc: 在售的四条线：间歇式、塑料、连续式、废油蒸馏。
+    desc_en: The four lines we build — batch, plastics, continuous and waste-oil distillation.
+  - key: tech
+    title: 工艺与产出
+    title_en: Process & output
+    desc: 出油率，以及一批料的电、水、人工与油、炭、气。
+    desc_en: Oil yield, and what one batch costs and produces in power, water, crew, oil, char and gas.
+  - key: reference
+    title: 项目案例
+    title_en: References
+    desc: 名录里的项目，配它对应的公开档位参数。
+    desc_en: A project from the list, paired with the published figures for that size.
 
 pages:
   - slug: tyre-pyrolysis
+    group: line
     line: "01"
     img: r-batch.jpg
     title: 废轮胎间歇式裂解设备
@@ -38,6 +82,7 @@ pages:
           - "Tyre batch plants on the project list include Mexico 15 TPD, Iran 20 TPD, Egypt 1 and 5 TPD, Afghanistan 10–20 TPD and Pakistan 2 / 5 TPD. Morocco 45 TPD is tyres plus plastics. Names in the brochure are partly anonymised; site photos and proposal originals can be reviewed at the factory."
 
   - slug: plastic-pyrolysis
+    group: line
     img: r-batch.jpg
     title: 废塑料裂解设备
     title_en: Waste Plastic Pyrolysis Plant
@@ -64,6 +109,7 @@ pages:
           - "On record: Sri Lanka, Ecolux Bio Harvest, batch 15 / 50 TPD, waste plastics; Peru, Peru Bioquimicos, batch 2 / 10 TPD, waste plastics; China, Fujian / Henan, batch 15 TPD ×4 sets, plastics / tyres."
 
   - slug: continuous-pyrolysis
+    group: line
     line: "03"
     img: r-continuous.jpg
     title: 连续式裂解设备
@@ -93,6 +139,7 @@ pages:
           - "Delivery is about 70 working days after contract. Warranty is 3 years excluding wear parts, with lifetime inspection support. Continuous project on record: Poland, government project, 40 TPD, slurry / sewage sludge."
 
   - slug: waste-oil-distillation
+    group: line
     line: "04"
     img: r-distill.jpg
     title: 废油蒸馏精制设备
@@ -122,6 +169,7 @@ pages:
           - "Fabrication is 35–40 days, with a 12-month warranty. On record: Vietnam, Zana / David, skid 2×1 TPD plus 1 TPD distillation, tyre oil. A distillation site photo is from Malaysia."
 
   - slug: pyrolysis-oil-yield
+    group: tech
     img: oil-pour.jpg
     title: 裂解出油率与一批料的产出
     title_en: Pyrolysis Oil Yield and Batch Output
@@ -150,6 +198,7 @@ pages:
           - "Over 300 operating days: about 3,000 t/yr of feedstock, about 1,350 t/yr of oil, about 1,140 t/yr of char. Maintenance and a rainy season sit outside that. Equipment price and payback are calculated per project and are not listed here."
 
   - slug: reference-mexico-tyres
+    group: reference
     img: r-batch.jpg
     title: 案例：墨西哥 15 TPD 废轮胎间歇式
     title_en: "Reference: Mexico 15 TPD Waste Tyre Batch Plant"

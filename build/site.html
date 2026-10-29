@@ -42,7 +42,8 @@
       <a href="#output"><em>03</em>{{ P('产出', 'Outputs') }}</a>
       <a href="#factory"><em>04</em>{{ P('工厂', 'Factory') }}</a>
       <a href="#cases"><em>05</em>{{ P('客户', 'Clients') }}</a>
-      <a href="#contact"><em>06</em>{{ P('联系', 'Contact') }}</a>
+      <a href="{{ idx_href }}"><em>06</em>{{ P('资源', 'Notes') }}</a>
+      <a href="#contact"><em>07</em>{{ P('联系', 'Contact') }}</a>
     </nav>
     <div class="hd-r">
       <a class="lang" href="{{ '../index.html' if lang == 'en' else 'en/index.html' }}" hreflang="{{ 'zh-CN' if lang == 'en' else 'en' }}">{{ '中文' if lang == 'en' else 'EN' }}</a>
@@ -309,13 +310,38 @@
   </div>
 </section>
 
-{# ── 06 联系 ──────────────────────────────────────────── #}
+{# ── 06 资源（技术页索引）────────────────────────────────── #}
+<section class="sec sec-alt" id="resources">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="kicker"><em>06</em>{{ P('资源', 'Notes') }}</p>
+      <h2>{{ P(idx.title, idx.title_en) }}</h2>
+      <p class="lead">{{ P(idx.lead, idx.lead_en) }}</p>
+    </div>
+    <div class="cards">
+      {% for g in guides[:3] %}
+      <a class="card reveal" href="{{ g.href }}">
+        <div class="card-img">{{ img(g.img, '', P(g.title, g.title_en)) }}<span class="chip">{{ P(g.kicker, g.kicker_en) }}</span></div>
+        <div class="card-body">
+          <span class="card-num">{{ g.n }}</span>
+          <h3>{{ P(g.title, g.title_en) }}</h3>
+          <p>{{ P(g.desc, g.desc_en) }}</p>
+          <span class="card-more">{{ P('读这一页', 'Read the note') }} →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="idx-all"><a class="btn" href="{{ idx_href }}">{{ P('全部 ' ~ guides|length ~ ' 篇技术页与案例', 'All ' ~ guides|length ~ ' notes and references') }}</a></p>
+  </div>
+</section>
+
+{# ── 07 联系 ──────────────────────────────────────────── #}
 <section class="sec sec-cta" id="contact">
   <div class="hexlattice" aria-hidden="true"></div>
   <div class="wrap">
     <div class="grid-2 cta-grid">
       <div>
-        <p class="kicker"><em>06</em>{{ P(c.contact.kicker, c.contact.kicker_en) }}</p>
+        <p class="kicker"><em>07</em>{{ P(c.contact.kicker, c.contact.kicker_en) }}</p>
         <h2>{{ P(c.contact.title, c.contact.title_en) }}</h2>
         <p class="lead">{{ P(c.contact.factory, c.contact.factory_en) }}</p>
         <p class="addr">{{ P(c.contact.address, c.contact.address_en) }}</p>
@@ -347,6 +373,7 @@
       <span>{{ 'XG ENVIRONMENTAL EQUIPMENT CO., LTD.' if lang == 'zh' else 'XG ENVIRONMENTAL EQUIPMENT CO., LTD.' }}</span>
     </div>
     <div class="ft-links">
+      <a href="{{ idx_href }}">{{ P('资源中心', 'Notes') }}</a>
       {% for g in guides %}<a href="{{ g.href }}">{{ P(g.title, g.title_en) }}</a>{% endfor %}
       {% if c.contact.web %}<a href="{{ c.contact.web if c.contact.web.startswith('http') else 'http://' ~ c.contact.web }}">{{ c.contact.web }}</a>{% endif %}
       {% if c.contact.web2 %}<a href="{{ c.contact.web2 if c.contact.web2.startswith('http') else 'http://' ~ c.contact.web2 }}">{{ c.contact.web2 }}</a>{% endif %}
