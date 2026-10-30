@@ -36,19 +36,18 @@ toc:
     - {num: "02", page: "04", cn: 数字看 XG, en: XG in Numbers}
     - {num: "03", page: "05", cn: 生产基地, en: Manufacturing Base}
     - {num: "04", page: "06", cn: 制造与品控, en: Fabrication & QC}
-    - {num: "05", page: "07", cn: 资质与认证, en: Certifications}
-    - {num: "06", page: "08", cn: 产品矩阵, en: Product Lines}
-    - {num: "07", page: "09", cn: 间歇式 / 撬装式裂解, en: Batch & Skid Pyrolysis}
-    - {num: "08", page: "10", cn: 连续式裂解, en: Continuous Pyrolysis}
-    - {num: "09", page: "11", cn: 废油蒸馏精制, en: Distillation}
-    - {num: "10", page: "12", cn: 生物质炭化, en: Carbonization}
-    - {num: "11", page: "13", cn: 适用原料, en: Available Feedstock}
-    - {num: "12", page: "14", cn: 产物与应用, en: Outputs & Applications}
-    - {num: "13", page: "15", cn: 投入与产出, en: Inputs & Outputs}
-    - {num: "14", page: "16", cn: 工艺流程与安全, en: Process & Safety}
-    - {num: "15", page: "17", cn: 客户与现场, en: Clients & Sites}
-    - {num: "16", page: "18", cn: 服务与交付, en: Service & Delivery}
-    - {num: "17", page: "19", cn: 联系我们, en: Contact}
+    - {num: "05", page: "07", cn: 产品矩阵, en: Product Lines}
+    - {num: "06", page: "08", cn: 间歇式 / 撬装式裂解, en: Batch & Skid Pyrolysis}
+    - {num: "07", page: "09", cn: 连续式裂解, en: Continuous Pyrolysis}
+    - {num: "08", page: "10", cn: 废油蒸馏精制, en: Distillation}
+    - {num: "09", page: "11", cn: 生物质炭化, en: Carbonization}
+    - {num: "10", page: "12", cn: 适用原料, en: Available Feedstock}
+    - {num: "11", page: "13", cn: 产物与应用, en: Outputs & Applications}
+    - {num: "12", page: "14", cn: 投入与产出, en: Inputs & Outputs}
+    - {num: "13", page: "15", cn: 工艺流程与安全, en: Process & Safety}
+    - {num: "14", page: "16", cn: 客户与现场, en: Clients & Sites}
+    - {num: "15", page: "17", cn: 服务与交付, en: Service & Delivery}
+    - {num: "16", page: "18", cn: 联系我们, en: Contact}
 
 about:
   kicker: 企业简介
@@ -190,7 +189,7 @@ cn2_en: "Continuous gas-and-char co-generation; self-fuelled, one third of the h
     - {t: 蒸馏 + 撬装裂解, t_en: Distillation + Skid, d: 小规模试产：2×1 TPD 撬装配 1 TPD 蒸馏，先跑通再扩产。, d_en: "Pilot first — 2×1 TPD skids plus 1 TPD distillation, prove the flow, then scale."}
 
 batch:
-  num: "07"
+  num: "06"
   kicker: 间歇式 / 撬装式裂解
   kicker_en: BATCH & SKID PYROLYSIS
   lead: 结构最简、上手最快的一条线，也是出口量最大的一条。
@@ -224,7 +223,7 @@ batch:
   foot_en: ~35 working days fabrication · 20 days installation · 3 days trial run & training · 12-month warranty
 
 continuous:
-  num: "08"
+  num: "07"
   kicker: 连续式裂解
   kicker_en: CONTINUOUS PYROLYSIS
   lead: 不停机、不降温，把「一批一釜」变成一条流水线。
@@ -254,7 +253,7 @@ continuous:
   foot_en: ~70 working days delivery · 3-year warranty (wear parts excluded) · lifetime inspection support
 
 distillation:
-  num: "09"
+  num: "08"
   kicker: 废油蒸馏精制
   kicker_en: DISTILLATION & REFINING
   lead: 把裂解油、废机油做成能卖上价的柴油类工业燃料。
@@ -286,7 +285,7 @@ distillation:
   foot_en: 35–40 days fabrication · atmospheric or vacuum · 12-month warranty
 
 carbonization:
-  num: "10"
+  num: "09"
   kicker: 生物质炭化
   kicker_en: BIOMASS CARBONIZATION
   lead: 气炭联产，自产可燃气回供，连续跑 7–10 天不停炉。
