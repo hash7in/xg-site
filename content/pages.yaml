@@ -37,6 +37,11 @@ groups:
     title_en: Equipment lines
     desc: 在售的四条线：间歇式、塑料、连续式、废油蒸馏。
     desc_en: The four lines we build — batch, plastics, continuous and waste-oil distillation.
+  - key: legal
+    title: 法律条款
+    title_en: Legal
+    desc: 隐私与数据使用说明。
+    desc_en: Privacy and data use.
   - key: tech
     title: 工艺与产出
     title_en: Process & output
@@ -297,3 +302,76 @@ pages:
           - YD-15：15 t/d，主炉 φ2800×8000×18，材质 Q345R，单批约 20 小时，轮胎出油率 45%–50%。间歇式制造约 35 个工作日，安装 20 天，试运行培训 3 天，整机质保 12 个月。
         p_en:
           - "YD-15: 15 t/d, reactor φ2800×8000×18, Q345R, about 20 hours per batch, tyre oil yield 45–50%. Batch plants take about 35 working days to fabricate, 20 days to install and 3 days to commission and train, with a 12-month warranty."
+
+  # 隐私政策：Meta App（Facebook 主页发布）需要在应用设置里填这个网址，切正式模式用。
+  - slug: privacy
+    group: legal
+    img: plant.jpg
+    title: 隐私政策
+    title_en: Privacy Policy
+    desc: XG 环保装备官网与 Facebook 主页的隐私与数据使用说明，含数据删除请求方式。
+    desc_en: How XG Environmental Equipment handles data on this website and on our Facebook Page, including how to request deletion.
+    kicker: 法律条款
+    kicker_en: LEGAL
+    lead: 最后更新 2026-11-01。这份说明覆盖本网站（xingemachinery.com）与我们的 Facebook 主页；它只写我们实际会做的事，不预设没有的收集行为。
+    lead_en: Last updated 1 November 2026. This notice covers this website (xingemachinery.com) and our Facebook Page. It states only what we actually do — no collection we do not perform.
+    updated: 2026-11-01
+    sections:
+      - h: 我们是谁
+        h_en: Who we are
+        p:
+          - XG 环保装备（XG Environmental Equipment Co., Ltd.，河南生产基地）设计、制造并交付废轮胎/塑料热解、废油蒸馏与生物质炭化成套设备。本网站与我们的 Facebook 主页都是公司自有的对外窗口。
+          - 数据相关的联系邮箱：binaryeva@gmail.com；WhatsApp：+86 185 0309 0942。
+        p_en:
+          - XG Environmental Equipment Co., Ltd. designs, builds and delivers pyrolysis, waste-oil distillation and biomass carbonization plants from our Henan production base. This website and our Facebook Page are our own channels.
+          - "Contact for anything data related: binaryeva@gmail.com, WhatsApp +86 185 0309 0942."
+      - h: 本网站收集什么
+        h_en: What this website collects
+        p:
+          - 本网站是纯静态页面，没有账号系统、没有广告脚本、没有第三方分析埋点。字体与图片都从我们自己域名加载，不向外部请求。
+          - 服务器会保留常规访问日志（IP、时间、请求路径、浏览器标识），用于排查故障与防滥用，保留 30 天后自动轮转删除。
+        p_en:
+          - This site is fully static. There is no account system, no advertising script and no third-party analytics. Fonts and images load from our own domain; nothing is fetched from outside services.
+          - Our web server keeps standard access logs (IP, time, requested path, user agent) to diagnose faults and prevent abuse. They rotate out after 30 days.
+      - h: Facebook 主页与 Meta 接口
+        h_en: Our Facebook Page and the Meta API
+        p:
+          - 我们使用 Meta 提供的接口，把我们自己制作的设备视频与图文发布到我们自己拥有的 Facebook 主页。这个用途只涉及我们自己主页的内容发布，不读取、不存储任何访客或粉丝的个人资料。
+          - 主页后台能看到 Meta 提供的汇总统计（播放量、覆盖人数、互动数这类聚合数字）。这些数据不含具体个人身份信息，我们不导出、不转售、不用于广告定向。
+          - 如果你在 Facebook 上给我们留言或私信，内容由 Meta 保存；我们只在回复你的问题时查看，不会复制到其它系统。
+        p_en:
+          - We use Meta's APIs to publish our own equipment videos and posts to the Facebook Page we own. This use is limited to publishing on our own Page; we do not read or store personal data of visitors or followers.
+          - Page insights we can see are aggregate numbers provided by Meta (views, reach, interactions). They contain no individual identities. We do not export, resell or use them for ad targeting.
+          - If you comment or message us on Facebook, that content is stored by Meta. We read it only to answer you and do not copy it into other systems.
+      - h: 你主动发来的信息
+        h_en: Information you send us
+        p:
+          - 通过 WhatsApp、邮件或询盘表单主动联系我们时，你会留下称呼、国家、联系方式与原料/产能需求。我们只用它来回复询盘、做选型与报价。
+          - 成交客户的项目资料（合同、图纸、收货信息）按合同与税务要求保存；未成交的询盘信息在 24 个月内清理。
+        p_en:
+          - When you contact us by WhatsApp, email or an enquiry form, you give us a name, country, contact details and your feedstock/capacity needs. We use them only to answer the enquiry and to size and quote a plant.
+          - For clients who order, project records (contract, drawings, delivery details) are kept as the contract and tax rules require. Enquiries that do not lead to an order are deleted within 24 months.
+      - h: 共享与跨境
+        h_en: Sharing and transfers
+        p:
+          - 我们不向第三方出售或共享个人数据。仅在必需时与托管服务商、物流与报关代理共享完成交付所需的最少信息。
+          - 我们的服务器与邮箱可能位于中国境外；跨境传输仅限上述用途所需的最少数据。
+        p_en:
+          - We do not sell or share personal data with third parties. Where necessary we share the minimum information required for delivery with our hosting provider, freight forwarder and customs broker.
+          - Our servers and mailbox may be located outside China; any transfer is limited to the minimum data needed for the purposes above.
+      - h: 你的权利与删除请求
+        h_en: Your rights and deletion requests
+        p:
+          - 你可以要求查询、更正或删除我们持有的你的个人数据。发邮件到 binaryeva@gmail.com，标题写 "Data request"，或通过 WhatsApp 联系我们。
+          - 我们会在 30 天内处理并回复。删除后我们不保留副本，法律要求留存的合同与税务记录除外。
+          - 关于 Facebook 上的内容（评论、私信、点赞），请同时使用 Facebook 自带的删除与隐私设置；我们无法代 Meta 删除你在其平台上的账号数据。
+        p_en:
+          - You can ask us to access, correct or delete the personal data we hold about you. Email binaryeva@gmail.com with the subject "Data request", or reach us on WhatsApp.
+          - We respond within 30 days. Once deleted we keep no copy, except contract and tax records we are legally required to retain.
+          - For content on Facebook itself (comments, messages, likes), please also use Facebook's own privacy and deletion settings; we cannot delete data Meta holds about your account.
+      - h: 变更
+        h_en: Changes
+        p:
+          - 本页更新时改开头的日期。政策有实质变化时，我们同时在本页顶部注明。
+        p_en:
+          - The date at the top changes whenever this page is updated. Material changes are also noted there.

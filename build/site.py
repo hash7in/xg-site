@@ -167,7 +167,8 @@ def main() -> int:
             {**g, "pages": [x for x in guides if x["group"] == g["key"]]}
             for g in group_meta.values()
         ]
-        groups = [g for g in groups if g["pages"]]
+        # legal 组（隐私政策等）不进资源中心
+        groups = [g for g in groups if g["pages"] and g["key"] != "legal"]
         # 资源中心只放文章：产品页走首页产品矩阵，不在这里重复
         articles = [x for g in groups if g["key"] != "line" for x in g["pages"]][::-1]
         for i, a in enumerate(articles):

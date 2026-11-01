@@ -92,6 +92,7 @@
     <div class="ft-links">
       <a href="{{ idx_href }}">{{ P('技术文章', 'Articles') }}</a>
       <a href="{{ home }}">{{ P('首页', 'Home') }}</a>
+      <a href="{{ root }}/{{ 'en/' if lang == 'en' else '' }}privacy.html">{{ P('隐私政策', 'Privacy Policy') }}</a>
     </div>
     <p class="ft-legal">{{ c.contact.legal }} · {{ c.meta.edition_en if lang == 'en' else c.meta.edition }} · {{ c.meta.code }}</p>
   </div>
