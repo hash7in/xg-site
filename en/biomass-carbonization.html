@@ -120,6 +120,8 @@
 
 <script>
 (function () {
+  // 站点由旧部署提供（没有 Functions），落库函数挂在新 Pages 项目上，所以用绝对地址 + CORS
+  const LEAD_API = 'https://xg-site.pages.dev/api/lead';
   const form = document.getElementById('quoteF');
   if (!form) return;
   const wa = form.dataset.wa;
@@ -159,8 +161,9 @@
     const text = lines.join('\n');
 
     // 有 Pages Function 就顺手落一份库（失败不影响主流程）
+    // 绝对地址：站点由旧部署提供（没有 Functions），落库函数挂在新 Pages 项目上，跨域有 CORS
     try {
-      fetch('/api/lead', {method: 'POST', headers: {'Content-Type': 'application/json'},
+      fetch(LEAD_API, {method: 'POST', headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({feedstock: v('feedstock'), tpd: v('tpd'), country: v('country'),
                               contact: v('contact'), source: source(), page: page})})
         .catch(() => {});
