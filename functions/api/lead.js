@@ -17,15 +17,38 @@ function clean(value, max = 200) {
   return String(value ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
 }
 
-function json(body, status = 200) {
+const ALLOWED_ORIGINS = ['https://xingemachinery.com', 'https://www.xingemachinery.com'];
+
+function cors(request) {
+  const origin = request.headers.get('origin') || '';
+  const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'access-control-allow-origin': allow,
+    'access-control-allow-methods': 'GET, POST, OPTIONS',
+    'access-control-allow-headers': 'content-type, authorization',
+    'access-control-max-age': '86400',
+    vary: 'origin',
+  };
+}
+
+function json(body, status = 200, request = null) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'cache-control': 'no-store',
+      ...(request ? cors(request) : {}),
+    },
   });
 }
 
+// 表单从 xingemachinery.com 跨域提交过来（站点由旧部署提供，函数只能挂在本项目上），先答预检
+export async function onRequestOptions({ request }) {
+  return new Response(null, { status: 204, headers: cors(request) });
+}
+
 export async function onRequestPost({ request, env }) {
-  if (!env.DB) return json({ ok: false, error: 'D1 binding DB missing' }, 503);
+  if (!env.DB) return json({ ok: false, error: 'D1 binding DB missing' }, 503, request);
 
   let data;
   try {
@@ -63,10 +86,10 @@ export async function onRequestPost({ request, env }) {
 
 /** GET /api/leads?since=2026-11-01T00:00:00Z —— 给仓库的夜间拉取用，必须带 token。 */
 export async function onRequestGet({ request, env }) {
-  if (!env.DB) return json({ ok: false, error: 'D1 binding DB missing' }, 503);
+  if (!env.DB) return json({ ok: false, error: 'D1 binding DB missing' }, 503, request);
   const token = (request.headers.get('authorization') || '').replace(/^Bearer\s+/i, '');
   if (!env.LEADS_PULL_TOKEN || token !== env.LEADS_PULL_TOKEN) {
-    return json({ ok: false, error: 'unauthorized' }, 401);
+    return json({ ok: false, error: 'unauthorized' }, 401, request);
   }
   const since = clean(new URL(request.url).searchParams.get('since') || '1970-01-01T00:00:00Z', 40);
   const { results } = await env.DB.prepare(
