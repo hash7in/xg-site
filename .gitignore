@@ -1,3 +1,6 @@
 .DS_Store
 .cloudflare/
 .wrangler/
+
+# 本地部署配置（不同账号的 D1 id 不同，不进仓库以免影响旧项目的 git 构建）
+wrangler.toml
