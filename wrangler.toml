@@ -1,0 +1,11 @@
+# Cloudflare Pages：静态站 + functions/ 下的 /api/lead。
+# 部署：wrangler pages deploy . --project-name xg-site
+# D1 绑定与 LEADS_PULL_TOKEN 在后台配（见 functions/api/lead.js 顶部注释），不进仓库。
+name = "xg-site"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "xg-leads"
+database_id = "TODO-create-with-wrangler-d1-create"
