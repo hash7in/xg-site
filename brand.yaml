@@ -81,3 +81,14 @@ cover_bg: "linear-gradient(158deg,#0B2437 0%,#123F5F 52%,#1B5680 100%)"
 
 font_sans: "'Barlow','Inter','HarmonyOS Sans SC','Noto Sans Math','Noto Naskh Arabic','PingFang SC','Microsoft YaHei',sans-serif"
 font_mono: "'Inter','DejaVu Sans Mono',monospace"   # 位号/编号用 Inter + 等宽数字，避免多引一个字体
+
+# ── 对外社交账号（/links 页与所有渠道链接读这里）──────────────────
+# 没注册的写 null，页面自动不出这一项。填完只需 make site 重新生成。
+social:
+  facebook: "https://www.facebook.com/profile.php?id="   # TODO 主页完整链接
+  youtube: null
+  instagram: null
+  tiktok: null
+  linkedin: null
+  x: null
+  whatsapp: "+86 185 0309 0942"

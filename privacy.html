@@ -91,7 +91,98 @@
     </figure>
   </div>
 </article>
-</main>
+<section class="quote" id="quote">
+  <div class="wrap quote-in">
+    <div class="quote-h">
+      <p class="kicker"><em>↗</em>报价</p>
+      <h2>填三项，直接问价</h2>
+      <p class="lead">我们按原料和日处理量定机型与交期。填完点一下，消息会带着你的工况发到 WhatsApp。</p>
+    </div>
+    <form class="quote-f" id="quoteF" data-wa="8618503090942"
+          data-msg="Hi, I want a quotation."
+          data-page="https://xingemachinery.com/privacy.html">
+      <label class="qf">
+        <span>原料</span>
+        <select name="feedstock" required>
+          <option value="waste tyres">废轮胎</option>
+          <option value="waste plastic">废塑料</option>
+          <option value="tyres + plastic">轮胎 + 塑料</option>
+          <option value="waste oil">废机油</option>
+          <option value="oil sludge">油泥</option>
+          <option value="biomass">生物质</option>
+        </select>
+      </label>
+      <label class="qf">
+        <span>日处理量 (吨/天)</span>
+        <input name="tpd" type="number" inputmode="decimal" min="0.5" max="200" step="0.5"
+               placeholder="10" required>
+      </label>
+      <label class="qf">
+        <span>国家 / 地区</span>
+        <input name="country" type="text" maxlength="60" placeholder="如 Nigeria" required>
+      </label>
+      <label class="qf qf-wide">
+        <span>WhatsApp 或邮箱（选填，方便我们直接回你）</span>
+        <input name="contact" type="text" maxlength="80" placeholder="+234 … / you@company.com">
+      </label>
+      <button class="btn quote-b" type="submit">在 WhatsApp 里发出去</button>
+      <p class="quote-note">点开后会跳到 WhatsApp，消息已写好，你只需按发送。</p>
+    </form>
+  </div>
+</section>
+
+<script>
+(function () {
+  const form = document.getElementById('quoteF');
+  if (!form) return;
+  const wa = form.dataset.wa;
+  const page = (form.dataset.page || location.pathname).replace(/^https?:\/\/[^/]+/, '');
+
+  // 来源：先看 UTM，再看 referrer 域名，最后记 direct —— 三种都能在 CRM 里对上
+  function source() {
+    const q = new URLSearchParams(location.search);
+    const utm = q.get('utm_source');
+    const camp = q.get('utm_campaign') || '';
+    if (utm) return utm + (camp ? '/' + camp : '');
+    const ref = document.referrer || '';
+    if (!ref) return 'direct';
+    const host = ref.replace(/^https?:\/\//, '').split('/')[0].replace(/^www\./, '');
+    if (/facebook|fb\./.test(host)) return 'facebook';
+    if (/instagram/.test(host)) return 'instagram';
+    if (/youtube|youtu\.be/.test(host)) return 'youtube';
+    if (/tiktok/.test(host)) return 'tiktok';
+    if (/linkedin|lnkd\.in/.test(host)) return 'linkedin';
+    if (/x\.com|t\.co|twitter/.test(host)) return 'x';
+    if (/google|bing|duckduckgo|yahoo/.test(host)) return 'search';
+    return host;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const v = k => (fd.get(k) || '').toString().trim();
+    const lines = [
+      form.dataset.msg,
+      'Feedstock: ' + v('feedstock'),
+      'Capacity: ' + v('tpd') + ' TPD',
+      'Country: ' + v('country')
+    ];
+    if (v('contact')) lines.push('Contact: ' + v('contact'));
+    lines.push('Source: ' + source() + ' | page: ' + page);
+    const text = lines.join('\n');
+
+    // 有 Pages Function 就顺手落一份库（失败不影响主流程）
+    try {
+      fetch('/api/lead', {method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({feedstock: v('feedstock'), tpd: v('tpd'), country: v('country'),
+                              contact: v('contact'), source: source(), page: page})})
+        .catch(() => {});
+    } catch (err) { /* 静态站/离线都无妨 */ }
+
+    window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+})();
+</script></main>
 
 <footer class="ft">
   <div class="wrap ft-in">

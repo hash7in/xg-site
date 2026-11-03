@@ -1,0 +1,58 @@
+{% macro P(cn, en) -%}{{ en if lang == 'en' and en else cn }}{%- endmacro %}
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.desc }}">
+<meta name="theme-color" content="#0B2437">
+<link rel="canonical" href="{{ canonical }}">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="{{ root }}/assets/brand/logo-mark.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="zh-CN" href="{{ href_zh }}">
+<link rel="alternate" hreflang="en" href="{{ href_en }}">
+<link rel="stylesheet" href="{{ root }}/assets/css/site.css">
+</head>
+<body class="lang-{{ lang }} links-body">
+<main class="links">
+  <div class="links-in">
+    <header class="links-h">
+      <img src="{{ root }}/assets/brand/logo-mark-reverse.svg" alt="XG" width="44" height="44">
+      <h1>{% if lang == 'en' %}XINGE PYROLYSIS &amp; BIOCHAR MACHINERY{% else %}新歌环保 · 裂解 / 蒸馏 / 炭化{% endif %}</h1>
+      <p>{{ P('废轮胎、废塑料、废机油、生物质 —— 成套设备，30 多个国家。',
+              'Waste tyres, plastics, waste oil, biomass — complete plants, 30+ countries.') }}</p>
+    </header>
+
+    {% set wa = social.whatsapp_clean %}
+    {% if wa %}
+    <a class="links-row links-wa" href="https://wa.me/{{ wa }}?text={{ P('你好，我想咨询裂解设备方案与报价。', 'Hi, I would like a proposal and quote for a pyrolysis plant.')|urlencode }}" target="_blank" rel="noopener">
+      <b>WhatsApp</b><span>{{ social.whatsapp }}</span>
+    </a>
+    {% endif %}
+
+    <a class="links-row" href="{{ root }}/{{ 'en/' if lang == 'en' else '' }}index.html">
+      <b>{{ P('官网首页', 'Website') }}</b><span>xingemachinery.com</span>
+    </a>
+
+    {% for key, label in [('facebook', 'Facebook'), ('youtube', 'YouTube'), ('instagram', 'Instagram'),
+                          ('tiktok', 'TikTok'), ('linkedin', 'LinkedIn'), ('x', 'X')] %}
+      {% if social[key] %}
+      <a class="links-row" href="{{ social[key] }}" target="_blank" rel="noopener"><b>{{ label }}</b><span>{{ P('看设备实拍与新片', 'Plant footage and new clips') }}</span></a>
+      {% endif %}
+    {% endfor %}
+
+    <p class="links-note">{{ P('报价需要三项：原料、日处理量、国家。发给我们，当天回。',
+                              'A quote needs three things: feedstock, daily capacity, country. Send them, we reply the same day.') }}</p>
+
+    <nav class="links-nav">
+      {% for p in guides[:6] %}
+      <a href="{{ root }}/{{ 'en/' if lang == 'en' else '' }}{{ p.href }}?utm_source=links&utm_medium=bio&utm_campaign=profile">{{ P(p.title, p.title_en) }}</a>
+      {% endfor %}
+    </nav>
+
+    <p class="links-legal">{{ social.legal }}</p>
+  </div>
+</main>
+</body>
+</html>

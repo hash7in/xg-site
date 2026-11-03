@@ -18,6 +18,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 
 import yaml
@@ -63,6 +64,31 @@ META = {
                 "carbonization plants for waste tyres, plastics, waste oil and biomass — 30+ countries.",
     },
 }
+
+
+ANALYTICS_TOKEN = os.environ.get("CF_ANALYTICS_TOKEN", "").strip()
+ANALYTICS = (
+    f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
+    f'data-cf-beacon=\'{{"token": "{ANALYTICS_TOKEN}"}}\'></script>'
+) if ANALYTICS_TOKEN else ""
+
+
+def write_page(path: Path, html: str) -> None:
+    """写页面；配了 Cloudflare Web Analytics token 就注入统计脚本（不配就完全不加，privacy 页不算说谎）。"""
+    if ANALYTICS:
+        html = html.replace("</body>", ANALYTICS + "\n</body>")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(html, encoding="utf-8")
+
+
+def social_links(brand: dict, content: dict) -> dict:
+    raw = dict(brand.get("social") or {})
+    wa = str(raw.get("whatsapp") or (content.get("contact") or {}).get("whatsapp") or "")
+    out = {k: (v or None) for k, v in raw.items()}
+    out["whatsapp"] = wa or None
+    out["whatsapp_clean"] = wa.replace(" ", "").replace("+", "").replace("-", "") if wa else ""
+    out["legal"] = (content.get("contact") or {}).get("legal") or ""
+    return out
 
 
 def optimise_images(force: bool) -> dict[str, tuple[int, int]]:
@@ -124,6 +150,8 @@ def main() -> int:
     tpl = env.get_template("site.html")
     page_tpl = env.get_template("page.html")
     idx_tpl = env.get_template("insights.html")
+    links_tpl = env.get_template("links.html")
+    social = social_links(brand, content)
     origin = str(brand.get("website") or "").rstrip("/")
     pages_doc = yaml.safe_load(PAGES.read_text(encoding="utf-8")) or {}
     pages = pages_doc.get("pages") or []
@@ -175,32 +203,28 @@ def main() -> int:
             a["n"] = f"{i + 1:02d}"
         idx_href = "insights.html"
         out = WEB / META[lang]["out"]
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(
-            tpl.render(
-                c=content,
-                brand=brand,
-                lang=lang,
-                meta=META[lang],
-                dims=dims,
-                root=root,
-                guides=guides,
-                articles=articles,
-                line_pages=line_pages,
-                idx=insight_copy,
-                idx_href=idx_href,
-                canonical=href(lang),
-                href_zh=href("zh"),
-                href_en=href("en"),
-            ) + "\n",
-            encoding="utf-8",
-        )
+        write_page(out, tpl.render(
+            c=content,
+            brand=brand,
+            lang=lang,
+            meta=META[lang],
+            dims=dims,
+            root=root,
+            guides=guides,
+            articles=articles,
+            line_pages=line_pages,
+            idx=insight_copy,
+            idx_href=idx_href,
+            canonical=href(lang),
+            href_zh=href("zh"),
+            href_en=href("en"),
+            social=social,
+        ) + "\n")
         print(f"✓ {out}")
 
         # 资源中心：全部技术页的索引页，避免这些页面只出现在页脚
         idx_out = WEB / ("en/" if lang == "en" else "") / "insights.html"
-        idx_out.write_text(
-            idx_tpl.render(
+        write_page(idx_out, idx_tpl.render(
                 c=content,
                 brand=brand,
                 lang=lang,
@@ -220,21 +244,43 @@ def main() -> int:
                 href_zh=href("zh", "insights"),
                 href_en=href("en", "insights"),
                 alt=f"../insights.html" if lang == "en" else "en/insights.html",
-            ) + "\n",
-            encoding="utf-8",
-        )
+                social=social,
+            ) + "\n")
         print(f"✓ {idx_out}")
         if lang == "zh":
             locs.insert(2, href("zh", "insights"))
             locs.insert(3, href("en", "insights"))
+
+        # /links：社媒 bio 落地页（IG / TikTok 文案里不能放可点链接，只能指一个 bio 链接到这里）
+        links_out = WEB / ("en/" if lang == "en" else "") / "links.html"
+        write_page(links_out, links_tpl.render(
+            c=content,
+            brand=brand,
+            lang=lang,
+            root=root,
+            social=social,
+            guides=guides,
+            meta={
+                "lang": META[lang]["lang"],
+                "title": "Links · XG" if lang == "en" else "链接 · 新歌环保",
+                "desc": ("Every XG channel, plant footage and quote shortcut in one place."
+                         if lang == "en" else "新歌环保的全部渠道、设备实拍与报价入口。"),
+            },
+            canonical=href(lang, "links"),
+            href_zh=href("zh", "links"),
+            href_en=href("en", "links"),
+        ) + "\n")
+        print(f"✓ {links_out}")
+        if lang == "zh":
+            locs.append(href("zh", "links"))
+            locs.append(href("en", "links"))
 
         for page in pages:
             rel_out = f"en/{page['slug']}.html" if lang == "en" else f"{page['slug']}.html"
             others = [g for g in guides if g["slug"] != page["slug"]][:3]
             dest = WEB / rel_out
             dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_text(
-                page_tpl.render(
+            write_page(dest, page_tpl.render(
                     c=content,
                     brand=brand,
                     lang=lang,
@@ -253,9 +299,8 @@ def main() -> int:
                     href_en=href("en", page["slug"]),
                     idx_href=idx_href,
                     alt=f"../{page['slug']}.html" if lang == "en" else f"en/{page['slug']}.html",
-                ) + "\n",
-                encoding="utf-8",
-            )
+                    social=social,
+                ) + "\n")
             if lang == "zh":
                 locs.append(href("zh", page["slug"]))
                 locs.append(href("en", page["slug"]))

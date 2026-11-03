@@ -607,3 +607,47 @@ h3 { font-family: var(--display); font-size: 20px; letter-spacing: .01em; }
 .page-crumb a { color: var(--navy); }
 .page-crumb a:hover { color: var(--green); }
 .page-crumb span { color: var(--line); }
+
+/* ── 报价表单（build/quote.html）：三项必填 → 生成结构化 WhatsApp 消息 ── */
+.quote { padding: 76px 0 88px; background: var(--tint); border-top: 1px solid var(--line); }
+.quote-tight { padding: 52px 0 60px; }
+.quote-in { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; }
+.quote-h h2 { font-size: clamp(24px, 2.6vw, 34px); line-height: 1.18; color: var(--navy); letter-spacing: -.01em; }
+.quote-h .lead { margin-top: 14px; color: var(--muted); font-size: 15px; max-width: 34ch; }
+.quote-f { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
+.qf { display: flex; flex-direction: column; gap: 7px; }
+.qf-wide { grid-column: 1 / -1; }
+.qf span { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.qf input, .qf select {
+  font-family: var(--sans); font-size: 15px; color: var(--ink); background: #fff;
+  border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; width: 100%;
+}
+.qf input:focus, .qf select:focus { outline: 2px solid var(--green); outline-offset: 1px; border-color: var(--green); }
+.quote-b { grid-column: 1 / -1; justify-content: center; margin-top: 6px; }
+.quote-note { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
+@media (max-width: 900px) {
+  .quote-in { grid-template-columns: 1fr; gap: 26px; }
+  .quote-f { grid-template-columns: 1fr; }
+}
+
+/* ── /links：社媒 bio 落地页 ── */
+.links-body { background: var(--deep); color: #fff; }
+.links { min-height: 100vh; display: grid; place-items: center; padding: 56px 20px 72px; }
+.links-in { width: 100%; max-width: 520px; }
+.links-h { text-align: center; margin-bottom: 34px; }
+.links-h h1 { font-size: 17px; letter-spacing: .12em; text-transform: uppercase; margin: 18px 0 10px; color: #fff; }
+.links-h p { font-size: 13px; color: var(--on-dark); max-width: 36ch; margin: 0 auto; }
+.links-row {
+  display: flex; align-items: baseline; gap: 14px; padding: 16px 18px; margin-bottom: 10px;
+  border: 1px solid var(--on-dark-line); border-radius: var(--r); color: #fff; text-decoration: none;
+  background: rgba(255, 255, 255, .03);
+}
+.links-row:hover { border-color: var(--green-soft); background: rgba(141, 203, 128, .08); }
+.links-row b { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--green-soft); min-width: 84px; }
+.links-row span { font-size: 13px; color: var(--on-dark); }
+.links-wa { border-color: var(--green-soft); }
+.links-note { margin: 26px 0 18px; font-size: 13px; color: var(--on-dark-dim); text-align: center; }
+.links-nav { display: grid; gap: 8px; margin-bottom: 26px; }
+.links-nav a { font-size: 13px; color: var(--on-dark); text-decoration: none; border-bottom: 1px solid var(--on-dark-line); padding-bottom: 8px; }
+.links-nav a:hover { color: #fff; border-color: var(--green-soft); }
+.links-legal { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; color: var(--on-dark-dim); text-align: center; }
