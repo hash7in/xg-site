@@ -120,8 +120,8 @@
 
 <script>
 (function () {
-  // 站点由旧部署提供（没有 Functions），落库函数挂在新 Pages 项目上，所以用绝对地址 + CORS
-  const LEAD_API = 'https://xg-site.pages.dev/api/lead';
+  // 同源优先：站点和落库函数都跑在 xingemachinery.com 上（Pages 项目 xg-site）
+  const LEAD_API = '/api/lead';
   const form = document.getElementById('quoteF');
   if (!form) return;
   const wa = form.dataset.wa;
